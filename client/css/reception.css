@@ -1,0 +1,163 @@
+.topbar {
+
+    height: 70px;
+
+    background: #FFFFFF;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 30px;
+
+    border-bottom: 1px solid #E5E7EB;
+
+}
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns: 340px 1fr;
+
+    height: calc(100vh - 70px);
+
+}
+
+.sidebar {
+
+    background: #FFFFFF;
+
+    border-right: 1px solid #E5E7EB;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.sidebar input {
+
+    padding: 12px;
+
+    border: 1px solid #D1D5DB;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+}
+
+.sidebar button {
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background: #A36361;
+
+    color: white;
+
+    transition: .2s;
+
+}
+
+.sidebar button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.clientList {
+
+    margin-top: 20px;
+
+    flex: 1;
+
+    overflow: auto;
+
+}
+
+.content {
+
+    padding: 40px;
+
+    background: #F7F8FA;
+
+}
+
+#clientDetails {
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    min-height: 500px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+
+}
+
+.client-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+.client-profile h2 {
+
+    font-size: 32px;
+
+}
+
+.client-profile hr {
+
+    border: none;
+
+    border-top: 1px solid #E5E7EB;
+
+}
+
+.actions {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 25px;
+
+}
+
+.actions button {
+
+    flex: 1;
+
+}

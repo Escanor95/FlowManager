@@ -1,0 +1,22 @@
+{
+  "name": "auraaccess-pro",
+  "version": "1.0.0",
+  "description": "Access control and business management system for wellness studios.",
+  "main": "server/app.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nestor Manzanarez",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {}
+}

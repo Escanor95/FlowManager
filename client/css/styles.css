@@ -1,0 +1,102 @@
+/* ===========================
+   AuraAccess Pro Design System
+=========================== */
+
+:root {
+
+    --color-primary: #A36361;
+    --color-secondary: #F1DBD0;
+    --color-background: #FDF5E7;
+    --color-surface: #FFFFFF;
+    --color-text: #2B2B2B;
+    --color-muted: #ADB697;
+
+    --border-radius: 12px;
+
+    --shadow:
+        0 8px 24px rgba(0, 0, 0, .08);
+
+    --transition: .25s ease;
+
+    --font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+
+    font-family: var(--font-family);
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+}
+
+header {
+
+    background: var(--color-primary);
+
+    color: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+button {
+
+    background: var(--color-primary);
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 22px;
+
+    border-radius: var(--border-radius);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+button:hover {
+
+    opacity: .9;
+
+}
+
+main {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
