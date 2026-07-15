@@ -1,0 +1,68 @@
+.modal-overlay {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    opacity: 1;
+
+    transition: opacity .25s ease;
+
+}
+
+.modal {
+
+    width: 600px;
+
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .20);
+
+    animation: modalOpen .25s ease;
+
+}
+
+.hidden {
+
+    display: none;
+
+}
+
+@keyframes modalOpen {
+
+    from {
+
+        transform: translateY(20px);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: translateY(0);
+
+        opacity: 1;
+
+    }
+
+}

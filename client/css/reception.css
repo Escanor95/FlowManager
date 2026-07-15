@@ -18,9 +18,19 @@
 
 .logo {
 
-    font-size: 24px;
+    font-size: 26px;
 
     font-weight: 700;
+
+    color: #A36361;
+
+}
+
+.user {
+
+    font-weight: 600;
+
+    color: #4B5563;
 
 }
 
@@ -52,13 +62,21 @@
 
 .sidebar input {
 
-    padding: 12px;
+    padding: 14px;
 
     border: 1px solid #D1D5DB;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     font-size: 15px;
+
+    outline: none;
+
+}
+
+.sidebar input:focus {
+
+    border-color: #A36361;
 
 }
 
@@ -68,7 +86,7 @@
 
     border: none;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
     cursor: pointer;
 
@@ -80,7 +98,7 @@
 
     color: white;
 
-    transition: .2s;
+    transition: .25s;
 
 }
 
@@ -88,21 +106,49 @@
 
     transform: translateY(-2px);
 
+    box-shadow: 0 8px 20px rgba(163, 99, 97, .25);
+
 }
 
 .clientList {
 
-    margin-top: 20px;
-
     flex: 1;
+
+    margin-top: 20px;
 
     overflow: auto;
 
 }
 
+.client-card {
+
+    background: white;
+
+    border: 1px solid #E5E7EB;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.client-card:hover {
+
+    background: #F8F2EF;
+
+    border-color: #A36361;
+
+}
+
 .content {
 
-    padding: 40px;
+    padding: 35px;
 
     background: #F7F8FA;
 
@@ -112,13 +158,13 @@
 
     background: white;
 
-    border-radius: 16px;
+    border-radius: 20px;
 
-    padding: 30px;
+    min-height: 650px;
 
-    min-height: 500px;
+    padding: 35px;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
 
 }
 
@@ -134,7 +180,15 @@
 
 .client-profile h2 {
 
-    font-size: 32px;
+    font-size: 34px;
+
+    color: #1F2937;
+
+}
+
+.client-profile small {
+
+    color: #6B7280;
 
 }
 
@@ -143,6 +197,12 @@
     border: none;
 
     border-top: 1px solid #E5E7EB;
+
+}
+
+.client-profile p {
+
+    line-height: 1.6;
 
 }
 
@@ -159,5 +219,27 @@
 .actions button {
 
     flex: 1;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: #A36361;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+}
+
+.actions button:hover {
+
+    transform: translateY(-2px);
 
 }
