@@ -4,8 +4,8 @@ fetch("views/reception.html")
 
         document.getElementById("app").innerHTML = html;
 
-        // Cargar el componente Modal
-        const modalResponse = await fetch("components/modal.html");
+        // Cargar el Modal
+        const modalResponse = await fetch("components/ui/modal/modal.html");
 
         document.getElementById("modalContainer").innerHTML =
             await modalResponse.text();
@@ -25,6 +25,27 @@ function initializeReception() {
 
     initializeButtons();
 
+    loadClients();
+
+}
+
+async function loadClients() {
+
+    try {
+
+        const response = await fetch("/clients");
+
+        const clients = await response.json();
+
+        renderClients(clients);
+
+    }
+    catch (error) {
+
+        console.error(error);
+
+    }
+
 }
 
 function initializeButtons() {
@@ -33,27 +54,7 @@ function initializeButtons() {
 
     newClientButton.addEventListener("click", () => {
 
-        openModal(`
-
-            <h2>Nuevo Cliente</h2>
-
-            <br>
-
-            <p>
-
-                Aquí aparecerá el formulario.
-
-            </p>
-
-            <br>
-
-            <button onclick="closeModal()">
-
-                Cerrar
-
-            </button>
-
-        `);
+        loadNewClientForm();
 
     });
 
@@ -76,11 +77,7 @@ function initializeSearch() {
 
                 <h2>Bienvenido a FlowManager</h2>
 
-                <p>
-
-                    Selecciona un cliente para comenzar.
-
-                </p>
+                <p>Selecciona un cliente para comenzar.</p>
 
             `;
 
@@ -141,11 +138,7 @@ function renderClients(clients) {
 
             try {
 
-                const response = await fetch(
-
-                    `/clients/${client.clientId}`
-
-                );
+                const response = await fetch(`/clients/${client.clientId}`);
 
                 const fullClient = await response.json();
 
@@ -182,63 +175,21 @@ function loadClient(client) {
 
             <hr>
 
-            <p>
+            <p><strong>📱 Teléfono:</strong> ${client.phone || "No registrado"}</p>
 
-                <strong>📱 Teléfono</strong><br>
-
-                ${client.phone || "No registrado"}
-
-            </p>
-
-            <p>
-
-                <strong>✉️ Correo</strong><br>
-
-                ${client.email || "No registrado"}
-
-            </p>
+            <p><strong>✉️ Correo:</strong> ${client.email || "No registrado"}</p>
 
             <hr>
 
-            <p>
+            <p><strong>🏷 Membresía:</strong> ${client.membershipType || "-"}</p>
 
-                <strong>🏷 Membresía</strong><br>
+            <p><strong>📊 Estado:</strong> ${client.membershipStatus}</p>
 
-                ${client.membershipType || "-"}
+            <p><strong>📚 Clases restantes:</strong> ${client.remainingClasses}</p>
 
-            </p>
+            <p><strong>📅 Inicio:</strong> ${client.startDate || "--"}</p>
 
-            <p>
-
-                <strong>📊 Estado</strong><br>
-
-                ${client.membershipStatus}
-
-            </p>
-
-            <p>
-
-                <strong>📚 Clases restantes</strong><br>
-
-                ${client.remainingClasses}
-
-            </p>
-
-            <p>
-
-                <strong>📅 Inicio</strong><br>
-
-                ${client.startDate || "--"}
-
-            </p>
-
-            <p>
-
-                <strong>📅 Vencimiento</strong><br>
-
-                ${client.endDate || "--"}
-
-            </p>
+            <p><strong>📅 Vencimiento:</strong> ${client.endDate || "--"}</p>
 
             <div class="actions">
 

@@ -1,0 +1,146 @@
+/*====================================================
+    FLOWMANAGER UI
+    Button v1.0
+====================================================*/
+
+.fm-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-width: 150px;
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    border: none;
+
+    border-radius: var(--fm-radius-md);
+
+    font-family: var(--fm-font);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--fm-transition);
+
+}
+
+.fm-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.fm-btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+/*=========================
+    PRIMARY
+=========================*/
+
+.fm-btn-primary {
+
+    background: var(--fm-primary);
+
+    color: var(--fm-text-white);
+
+}
+
+.fm-btn-primary:hover {
+
+    background: var(--fm-primary-hover);
+
+}
+
+/*=========================
+    SECONDARY
+=========================*/
+
+.fm-btn-secondary {
+
+    background: var(--fm-border);
+
+    color: var(--fm-text);
+
+}
+
+.fm-btn-secondary:hover {
+
+    background: #D5D8DD;
+
+}
+
+/*=========================
+    SUCCESS
+=========================*/
+
+.fm-btn-success {
+
+    background: var(--fm-success);
+
+    color: white;
+
+}
+
+.fm-btn-success:hover {
+
+    background: var(--fm-success-hover);
+
+}
+
+/*=========================
+    DANGER
+=========================*/
+
+.fm-btn-danger {
+
+    background: var(--fm-danger);
+
+    color: white;
+
+}
+
+.fm-btn-danger:hover {
+
+    background: var(--fm-danger-hover);
+
+}
+
+/*=========================
+    OUTLINE
+=========================*/
+
+.fm-btn-outline {
+
+    background: white;
+
+    border: 1px solid var(--fm-border);
+
+    color: var(--fm-text);
+
+}
+
+.fm-btn-outline:hover {
+
+    border-color: var(--fm-primary);
+
+    color: var(--fm-primary);
+
+}

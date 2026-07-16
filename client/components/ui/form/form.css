@@ -1,0 +1,184 @@
+/*====================================================
+
+    FLOWMANAGER UI
+
+    Form v1.0
+
+====================================================*/
+
+/* Contenedor principal */
+
+.fm-form {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+/* Secciones */
+
+.fm-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.fm-section-title {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: var(--fm-text);
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid var(--fm-border);
+
+}
+
+/* Grid Responsive */
+
+.fm-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    width: 100%;
+
+}
+
+/* Campo completo */
+
+.fm-full {
+
+    grid-column: 1 / -1;
+
+}
+
+/* Grupo */
+
+.fm-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+/* Labels */
+
+.fm-group label {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--fm-text);
+
+}
+
+/* Inputs */
+
+.fm-group input,
+.fm-group select,
+.fm-group textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-md);
+
+    background: var(--fm-surface);
+
+    color: var(--fm-text);
+
+    font-size: 15px;
+
+    font-family: var(--fm-font);
+
+    transition: var(--fm-transition);
+
+    box-sizing: border-box;
+
+}
+
+.fm-group textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+}
+
+.fm-group input:focus,
+.fm-group select:focus,
+.fm-group textarea:focus {
+
+    outline: none;
+
+    border-color: var(--fm-primary);
+
+    box-shadow: 0 0 0 3px rgba(163, 99, 97, .15);
+
+}
+
+/* Botones */
+
+.fm-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    .fm-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .fm-full {
+
+        grid-column: auto;
+
+    }
+
+    .fm-form-actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+    .fm-form-actions button {
+
+        width: 100%;
+
+    }
+
+}

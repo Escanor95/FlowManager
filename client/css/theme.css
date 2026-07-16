@@ -1,0 +1,82 @@
+:root {
+
+    /*====================================================
+        FLOWMANAGER UI
+        Theme v1.0
+    ====================================================*/
+
+    /* Primary */
+
+    --fm-primary: #A36361;
+    --fm-primary-hover: #8E5453;
+    --fm-primary-light: #F6ECEB;
+
+    /* Success */
+
+    --fm-success: #22C55E;
+    --fm-success-hover: #16A34A;
+
+    /* Danger */
+
+    --fm-danger: #EF4444;
+    --fm-danger-hover: #DC2626;
+
+    /* Warning */
+
+    --fm-warning: #F59E0B;
+
+    /* Background */
+
+    --fm-background: #F7F8FA;
+
+    --fm-surface: #FFFFFF;
+
+    /* Borders */
+
+    --fm-border: #E5E7EB;
+
+    /* Text */
+
+    --fm-text: #1F2937;
+
+    --fm-text-light: #6B7280;
+
+    --fm-text-white: #FFFFFF;
+
+    /* Radius */
+
+    --fm-radius-sm: 8px;
+
+    --fm-radius-md: 12px;
+
+    --fm-radius-lg: 18px;
+
+    /* Shadows */
+
+    --fm-shadow-sm:
+
+        0 4px 12px rgba(0, 0, 0, .05);
+
+    --fm-shadow-md:
+
+        0 10px 30px rgba(0, 0, 0, .08);
+
+    --fm-shadow-lg:
+
+        0 20px 60px rgba(0, 0, 0, .15);
+
+    /* Animation */
+
+    --fm-transition: .25s;
+
+    /* Typography */
+
+    --fm-font:
+
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+}

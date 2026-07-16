@@ -1,0 +1,157 @@
+<div class="feature-header">
+
+    <h2>👤 Registrar Cliente</h2>
+
+    <p>
+
+        Completa la información para registrar un nuevo cliente.
+
+    </p>
+
+</div>
+
+<form id="newClientForm" class="fm-form">
+
+    <!-- Información Básica -->
+
+    <section class="fm-section">
+
+        <h3 class="fm-section-title">
+
+            Información Básica
+
+        </h3>
+
+        <div class="fm-grid">
+
+            <div class="fm-group">
+
+                <label for="fullName">
+
+                    Nombre Completo *
+
+                </label>
+
+                <input type="text" id="fullName" required>
+
+            </div>
+
+            <div class="fm-group">
+
+                <label for="phone">
+
+                    Teléfono *
+
+                </label>
+
+                <input type="text" id="phone" required>
+
+            </div>
+
+            <div class="fm-group">
+
+                <label for="email">
+
+                    Correo Electrónico
+
+                </label>
+
+                <input type="email" id="email">
+
+            </div>
+
+            <div class="fm-group">
+
+                <label for="membershipType">
+
+                    Tipo de Membresía
+
+                </label>
+
+                <select id="membershipType">
+
+                    <option value="">
+
+                        Seleccionar...
+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Información Adicional -->
+
+    <section class="fm-section">
+
+        <h3 class="fm-section-title">
+
+            Información Adicional
+
+        </h3>
+
+        <div class="fm-grid">
+
+            <div class="fm-group">
+
+                <label for="emergencyContactName">
+
+                    Contacto de Emergencia
+
+                </label>
+
+                <input type="text" id="emergencyContactName">
+
+            </div>
+
+            <div class="fm-group">
+
+                <label for="emergencyContactPhone">
+
+                    Teléfono de Emergencia
+
+                </label>
+
+                <input type="text" id="emergencyContactPhone">
+
+            </div>
+
+            <div class="fm-group fm-full">
+
+                <label for="medicalNotes">
+
+                    Notas Médicas
+
+                </label>
+
+                <textarea id="medicalNotes"></textarea>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="fm-form-actions">
+
+        <button type="button" id="cancelNewClient" class="fm-btn fm-btn-secondary">
+
+            Cancelar
+
+        </button>
+
+        <button type="submit" id="saveNewClient" class="fm-btn fm-btn-primary">
+
+            Guardar Cliente
+
+        </button>
+
+    </div>
+
+</form>
+
+</div>
