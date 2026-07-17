@@ -94,6 +94,12 @@ async function saveNewClient(event) {
 
         await loadClients();
 
+        const clientResponse = await fetch(`/clients/${result.clientId}`);
+
+        const client = await clientResponse.json();
+
+        loadClient(client);
+
         alert("Cliente registrado correctamente");
 
     }

@@ -1,3 +1,5 @@
+let selectedClient = null;
+
 fetch("views/reception.html")
     .then(response => response.text())
     .then(async html => {
@@ -160,6 +162,8 @@ function renderClients(clients) {
 }
 
 function loadClient(client) {
+
+    selectedClient = client;
 
     document.getElementById("clientDetails").innerHTML = `
 
