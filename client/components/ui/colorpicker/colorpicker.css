@@ -1,0 +1,87 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    COLOR PICKER
+
+====================================================
+*/
+
+.fm-colorpicker {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.fm-color-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 40px);
+
+    gap: 12px;
+
+}
+
+.fm-color-option {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.fm-color-option:hover {
+
+    transform: scale(1.1);
+
+}
+
+.fm-color-option.selected {
+
+    border-color: var(--primary);
+
+    transform: scale(1.15);
+
+}
+
+.fm-color-selected {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.fm-color-preview {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+}
+
+.fm-color-name {
+
+    font-weight: 600;
+
+}

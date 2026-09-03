@@ -1,0 +1,117 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    TOOLTIP
+
+====================================================
+*/
+
+.fm-tooltip {
+
+    position: absolute;
+
+    min-width: 220px;
+
+    max-width: 280px;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E7EB;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #374151;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transform: translateY(6px);
+
+    transition:
+        opacity .18s ease,
+        transform .18s ease;
+
+    z-index: 9999;
+
+}
+
+.fm-tooltip.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.fm-tooltip-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+
+}
+
+.fm-tooltip-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 6px 0;
+
+}
+
+.fm-tooltip .material-symbols-outlined {
+
+    font-size: 18px;
+
+}
+
+.fm-tooltip-progress {
+
+    width: 100%;
+
+    height: 6px;
+
+    margin-top: 8px;
+
+    border-radius: 999px;
+
+    background: #E5E7EB;
+
+    overflow: hidden;
+
+}
+
+.fm-tooltip-progress-bar {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #22C55E;
+
+    transition: width .25s ease;
+
+}

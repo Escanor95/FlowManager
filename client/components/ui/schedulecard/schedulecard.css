@@ -1,0 +1,86 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    SCHEDULE CARD
+
+====================================================
+*/
+
+.fm-schedule-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    min-height: 56px;
+
+    padding: 12px 14px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E8EAF0;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        border-color .18s ease;
+
+}
+
+.fm-schedule-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #D4D8E3;
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .10);
+
+}
+
+.fm-card-color {
+
+    width: 6px;
+
+    align-self: stretch;
+
+    border-radius: 20px;
+
+    flex-shrink: 0;
+
+}
+
+.fm-card-icon {
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+
+}
+
+.fm-card-name {
+
+    flex: 1;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #1F2937;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}

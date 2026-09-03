@@ -6,7 +6,6 @@ fetch("views/reception.html")
 
         document.getElementById("app").innerHTML = html;
 
-        // Cargar el Modal
         const modalResponse = await fetch("components/ui/modal/modal.html");
 
         document.getElementById("modalContainer").innerHTML =
@@ -35,9 +34,7 @@ async function loadClients() {
 
     try {
 
-        const response = await fetch("/clients");
-
-        const clients = await response.json();
+        const clients = await ClientService.getAll();
 
         renderClients(clients);
 
@@ -72,16 +69,7 @@ function initializeSearch() {
 
         if (text.length === 0) {
 
-            document.getElementById("results").innerHTML =
-                "<p>Sin resultados...</p>";
-
-            document.getElementById("clientDetails").innerHTML = `
-
-                <h2>Bienvenido a FlowManager</h2>
-
-                <p>Selecciona un cliente para comenzar.</p>
-
-            `;
+            loadClients();
 
             return;
 
@@ -89,9 +77,7 @@ function initializeSearch() {
 
         try {
 
-            const response = await fetch(`/clients/search/${text}`);
-
-            const clients = await response.json();
+            const clients = await ClientService.search(text);
 
             renderClients(clients);
 
@@ -140,9 +126,7 @@ function renderClients(clients) {
 
             try {
 
-                const response = await fetch(`/clients/${client.clientId}`);
-
-                const fullClient = await response.json();
+                const fullClient = await ClientService.get(client.clientId);
 
                 loadClient(fullClient);
 
@@ -187,9 +171,9 @@ function loadClient(client) {
 
             <p><strong>🏷 Membresía:</strong> ${client.membershipType || "-"}</p>
 
-            <p><strong>📊 Estado:</strong> ${client.membershipStatus}</p>
+            <p><strong>📊 Estado:</strong> ${client.membershipStatus || "-"}</p>
 
-            <p><strong>📚 Clases restantes:</strong> ${client.remainingClasses}</p>
+            <p><strong>📚 Clases restantes:</strong> ${client.remainingClasses ?? "-"}</p>
 
             <p><strong>📅 Inicio:</strong> ${client.startDate || "--"}</p>
 
@@ -211,7 +195,7 @@ function loadClient(client) {
 
                 <button id="editBtn">
 
-                    Editar contacto
+                    Editar Cliente
 
                 </button>
 
@@ -220,5 +204,13 @@ function loadClient(client) {
         </div>
 
     `;
+
+    document
+        .getElementById("editBtn")
+        .addEventListener("click", () => {
+
+            loadNewClientForm(selectedClient);
+
+        });
 
 }

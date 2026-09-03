@@ -1,0 +1,128 @@
+.fm-calendar {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    padding: 16px;
+}
+
+.fm-calendar-toolbar,
+.fm-calendar-navigation,
+.fm-calendar-views {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.fm-calendar-toolbar {
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.fm-calendar-title {
+    color: var(--fm-text);
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.fm-calendar-button {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-sm);
+    color: var(--fm-text);
+    cursor: pointer;
+    font: inherit;
+    padding: 7px 10px;
+}
+
+.fm-calendar-button:hover,
+.fm-calendar-button.active {
+    background: var(--fm-primary-light);
+    border-color: var(--fm-primary);
+    color: var(--fm-primary);
+}
+
+.fm-calendar-weekdays,
+.fm-calendar-grid {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.fm-calendar-weekdays {
+    color: var(--fm-text-light);
+    font-size: 12px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.fm-calendar-day {
+    align-items: center;
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-sm);
+    color: var(--fm-text);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font: inherit;
+    gap: 4px;
+    justify-content: center;
+    min-height: 62px;
+    padding: 6px;
+}
+
+.fm-calendar-day:hover:not(:disabled) {
+    border-color: var(--fm-primary);
+}
+
+.fm-calendar-day.selected {
+    background: var(--fm-primary);
+    border-color: var(--fm-primary);
+    color: var(--fm-text-white);
+}
+
+.fm-calendar-day.disabled,
+.fm-calendar-day:disabled {
+    color: var(--fm-text-light);
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+.fm-calendar-day.outside-month {
+    opacity: .4;
+}
+
+.fm-calendar-day-availability {
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+    .fm-calendar-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .fm-calendar-navigation,
+    .fm-calendar-views {
+        justify-content: center;
+    }
+
+    .fm-calendar-day {
+        min-height: 48px;
+    }
+}
+
+.fm-calendar-day {
+    overflow: hidden;
+}
+
+.fm-calendar-day.disabled {
+    cursor: default;
+}
+
+.fm-reservation-day-classes {
+    pointer-events: auto;
+}

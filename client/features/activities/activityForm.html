@@ -1,0 +1,159 @@
+<form id="activityForm" class="fm-form">
+
+    <div class="fm-grid">
+
+        <div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Nombre de la clase
+
+                </label>
+
+                <input id="className" data-field="name" data-required="true" type="text" placeholder="Pilates Reformer">
+
+            </div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Icono
+
+                </label>
+
+                <div id="iconPicker" data-field="icon" data-component="IconPicker" data-required="true">
+
+                </div>
+
+            </div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Color
+
+                </label>
+
+                <div id="activityColor" data-field="color" data-component="ColorPicker" data-required="true">
+
+                </div>
+
+            </div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Duración
+
+                </label>
+
+                <input id="duration" data-field="duration" data-required="true" type="number" value="60">
+
+            </div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Capacidad sugerida
+
+                </label>
+
+                <input id="capacity" data-field="suggestedCapacity" type="number" value="5">
+
+            </div>
+
+            <div class="fm-group">
+
+                <label>
+
+                    Descripción
+
+                </label>
+
+                <textarea id="description" data-field="description" rows="4">
+
+                </textarea>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="class-preview">
+
+                <span id="previewIcon" class="material-symbols-outlined preview-icon">
+
+                    favorite
+
+                </span>
+
+                <h2 id="previewName">
+
+                    Nueva Clase
+
+                </h2>
+
+                <div>
+
+                    <span id="previewColor" class="activity-color">
+
+                    </span>
+
+                </div>
+
+                <p>
+
+                    <span id="previewDuration">
+
+                        50 minutos
+
+                    </span>
+
+                </p>
+
+                <p>
+
+                    <span id="previewCapacity">
+
+                        10 personas
+
+                    </span>
+
+                </p>
+
+                <small>
+
+                    Así aparecerá en FlowManager.
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="fm-actions">
+
+        <button type="button" id="cancelActivity" class="fm-btn">
+
+            Cancelar
+
+        </button>
+
+        <button type="submit" id="saveActivity" class="fm-btn fm-btn-primary">
+
+            Guardar Clase
+
+        </button>
+
+    </div>
+
+</form>

@@ -1,0 +1,78 @@
+.fm-login {
+    align-items: center;
+    background: var(--fm-background, #f5f6f8);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.fm-login-card {
+    background: var(--fm-surface, #ffffff);
+    border: 1px solid var(--fm-border, #e5e7eb);
+    border-radius: 18px;
+    box-shadow: var(--fm-shadow-md, 0 10px 30px rgba(0, 0, 0, .08));
+    max-width: 420px;
+    padding: 32px;
+    width: 100%;
+}
+
+.fm-login-logo {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.fm-login-logo h1 {
+    color: var(--fm-text);
+    margin: 0;
+}
+
+.fm-login-logo p {
+    color: var(--fm-text-light);
+    margin: 8px 0 0;
+}
+
+.fm-login-group {
+    margin-bottom: 18px;
+}
+
+.fm-login-group label {
+    color: var(--fm-text);
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.fm-login-group input {
+    border: 1px solid var(--fm-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 12px;
+    width: 100%;
+}
+
+.fm-login-button {
+    background: var(--fm-primary);
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    padding: 13px;
+    width: 100%;
+}
+
+.fm-login-button:disabled {
+    cursor: wait;
+    opacity: .7;
+}
+
+.fm-login-error {
+    background: #fff1f1;
+    border-radius: 8px;
+    color: #b42318;
+    margin-bottom: 16px;
+    padding: 10px;
+}

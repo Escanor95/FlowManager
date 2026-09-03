@@ -1,0 +1,291 @@
+<form id="scheduleForm">
+
+    <div class="fm-grid">
+
+        <!-- IZQUIERDA -->
+
+        <div>
+
+            <div class="fm-group">
+
+                <label>Actividad</label>
+
+                <select id="activity" data-field="activityId" data-required="true">
+                </select>
+
+            </div>
+
+
+            <div class="fm-group" id="singleDayGroup">
+
+                <label>Día</label>
+
+                <select id="weekday" data-field="weekday">
+
+                    <option value="Monday">
+                        Lunes
+                    </option>
+
+                    <option value="Tuesday">
+                        Martes
+                    </option>
+
+                    <option value="Wednesday">
+                        Miércoles
+                    </option>
+
+                    <option value="Thursday">
+                        Jueves
+                    </option>
+
+                    <option value="Friday">
+                        Viernes
+                    </option>
+
+                    <option value="Saturday">
+                        Sábado
+                    </option>
+
+                    <option value="Sunday">
+                        Domingo
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="fm-group">
+
+                <label>Hora</label>
+
+                <input id="startTime" data-field="startTime" type="time" value="08:00">
+
+            </div>
+
+
+            <div class="fm-group">
+
+                <label>Duración</label>
+
+                <input id="duration" data-field="duration" type="number" readonly>
+
+            </div>
+
+
+            <div class="fm-group">
+
+                <label>Cupo</label>
+
+                <input id="capacity" data-field="capacity" type="number" readonly>
+
+            </div>
+
+        </div>
+
+
+        <!-- DERECHA -->
+
+        <div>
+
+            <!-- COACH -->
+
+            <div class="fm-group">
+
+                <label>Coach</label>
+
+                <select id="coach" data-field="coachId">
+
+                    <option value="">
+                        Sin asignar
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- WELLHUB -->
+
+            <div class="fm-group">
+
+                <label>
+
+                    <input id="wellhub" data-field="wellhubSuggested" type="checkbox">
+
+                    Recomendada para Wellhub
+
+                </label>
+
+            </div>
+
+
+            <!-- TOTALPASS -->
+
+            <div class="fm-group">
+
+                <label>
+
+                    <input id="totalpass" data-field="totalpassSuggested" type="checkbox">
+
+                    Recomendada para TotalPass
+
+                </label>
+
+            </div>
+
+
+            <!-- RECURRENCIA -->
+
+            <div class="fm-group">
+
+                <label class="repeat-label">
+
+                    <input id="isRecurring" type="checkbox">
+
+                    Repetir horario
+
+                </label>
+
+            </div>
+
+
+            <!-- OPCIONES DE REPETICIÓN -->
+
+            <div id="repeatOptions" class="repeat-options" style="display:none;">
+
+                <div class="fm-group">
+
+                    <label>
+                        Días de repetición
+                    </label>
+
+
+                    <div class="schedule-weekdays">
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Monday">
+
+                            Lun
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Tuesday">
+
+                            Mar
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Wednesday">
+
+                            Mié
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Thursday">
+
+                            Jue
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Friday">
+
+                            Vie
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Saturday">
+
+                            Sáb
+
+                        </label>
+
+
+                        <label>
+
+                            <input type="checkbox" name="weekday" value="Sunday">
+
+                            Dom
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fm-group">
+
+                    <label for="repeatFrom">
+
+                        Desde
+
+                    </label>
+
+                    <input id="repeatFrom" data-field="repeatFrom" type="date">
+
+                </div>
+
+
+                <div class="fm-group">
+
+                    <label for="repeatUntil">
+
+                        Hasta
+
+                    </label>
+
+                    <input id="repeatUntil" data-field="repeatUntil" type="date">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ACCIONES -->
+
+    <div class="fm-actions">
+
+        <button type="button" id="cancelSchedule" class="fm-btn">
+
+            Cancelar
+
+        </button>
+
+
+        <button type="button" id="deactivateSchedule" class="fm-btn fm-btn-danger">
+
+            Desactivar
+
+        </button>
+
+
+        <button type="submit" class="fm-btn fm-btn-primary">
+
+            Guardar Horario
+
+        </button>
+
+    </div>
+
+</form>

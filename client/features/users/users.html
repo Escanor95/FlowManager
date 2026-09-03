@@ -1,0 +1,242 @@
+<div class="fm-page-header">
+
+    <div>
+
+        <h1>
+            Usuarios
+        </h1>
+
+        <p>
+            Administra las cuentas y accesos de FlowManager.
+        </p>
+
+    </div>
+
+
+    <button type="button" id="newUserButton" class="fm-btn fm-btn-primary">
+
+        + Nuevo usuario
+
+    </button>
+
+</div>
+
+
+<div id="userFormContainer" class="fm-user-form-container" hidden>
+
+    <form id="userForm">
+
+
+        <div class="fm-user-form-grid">
+
+
+            <!-- =========================================
+                 NOMBRE
+            ========================================== -->
+
+            <div class="fm-group">
+
+                <label>
+                    Nombre completo
+                </label>
+
+
+                <input id="userFullName" type="text" autocomplete="name" required>
+
+            </div>
+
+
+            <!-- =========================================
+                 CORREO
+            ========================================== -->
+
+            <div class="fm-group">
+
+                <label>
+                    Correo
+                </label>
+
+
+                <input id="userEmail" type="email" autocomplete="email" required>
+
+            </div>
+
+
+            <!-- =========================================
+                 CONTRASEÑA
+            ========================================== -->
+
+            <div class="fm-group">
+
+                <label>
+                    Contraseña
+                </label>
+
+
+                <div class="fm-password-wrapper">
+
+                    <input id="userPassword" type="password" minlength="8" autocomplete="new-password" required>
+
+
+                    <button type="button" id="toggleUserPassword" class="fm-password-toggle"
+                        aria-label="Mostrar contraseña">
+
+                        👁
+
+                    </button>
+
+                </div>
+
+
+                <small>
+                    Mínimo 8 caracteres.
+                </small>
+
+            </div>
+
+
+            <!-- =========================================
+                 ROL
+            ========================================== -->
+
+            <div class="fm-group">
+
+                <label>
+                    Tipo de usuario
+                </label>
+
+
+                <select id="userRole" required>
+
+                    <option value="">
+                        Seleccionar...
+                    </option>
+
+
+                    <option value="manager">
+                        Gerente
+                    </option>
+
+
+                    <option value="coach">
+                        Coach
+                    </option>
+
+
+                    <option value="reception">
+                        Recepción
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             ERROR
+        ========================================== -->
+
+        <div id="userFormError" class="fm-login-error" hidden>
+        </div>
+
+
+        <!-- =========================================
+             ACTIONS
+        ========================================== -->
+
+        <div class="fm-actions">
+
+            <button type="button" id="cancelUser" class="fm-btn">
+
+                Cancelar
+
+            </button>
+
+
+            <button type="submit" class="fm-btn fm-btn-primary">
+
+                Crear usuario
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<!-- ====================================================
+     CREDENCIALES CREADAS
+==================================================== -->
+
+<div id="userCredentials" class="fm-user-credentials" hidden>
+
+    <div>
+
+        <h3>
+            Usuario creado correctamente
+        </h3>
+
+
+        <p>
+            Guarda o envía estas credenciales.
+        </p>
+
+    </div>
+
+
+    <div class="fm-credentials-box">
+
+        <div>
+
+            <strong>
+                Usuario
+            </strong>
+
+
+            <span id="createdUserEmail">
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Contraseña
+            </strong>
+
+
+            <span id="createdUserPassword">
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="fm-actions">
+
+        <button type="button" id="copyCredentials" class="fm-btn">
+
+            📋 Copiar credenciales
+
+        </button>
+
+
+        <button type="button" id="sendCredentialsEmail" class="fm-btn fm-btn-primary">
+
+            ✉ Enviar credenciales por correo
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="usersList" class="fm-users-list">
+</div>

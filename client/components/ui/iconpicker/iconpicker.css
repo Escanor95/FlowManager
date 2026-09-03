@@ -1,0 +1,85 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    ICON PICKER
+
+====================================================
+*/
+
+.fm-iconpicker {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.fm-icon-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+.fm-icon-option {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    background: var(--surface);
+
+}
+
+.fm-icon-option:hover {
+
+    transform: translateY(-2px);
+
+    border-color: var(--primary);
+
+}
+
+.fm-icon-option.selected {
+
+    border: 2px solid var(--primary);
+
+}
+
+.fm-icon-option .material-symbols-outlined {
+
+    font-size: 32px;
+
+}
+
+.fm-icon-option span:last-child {
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+    text-align: center;
+
+}

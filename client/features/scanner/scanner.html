@@ -1,0 +1,121 @@
+<div class="fm-scanner-page">
+
+    <!-- ============================================
+         HEADER
+    ============================================= -->
+
+    <div class="fm-page-header">
+
+        <div>
+
+            <h1>
+                Escanear QR
+            </h1>
+
+            <p>
+                Escanea una tarjeta digital para identificar al usuario.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================
+         SCANNER
+    ============================================= -->
+
+    <div class="fm-scanner-layout">
+
+
+        <!-- ========================================
+             CAMERA
+        ========================================= -->
+
+        <div class="fm-scanner-camera-panel">
+
+            <div class="fm-scanner-camera-header">
+
+                <div>
+
+                    <h2>
+                        Cámara
+                    </h2>
+
+                    <span id="scannerStatus" class="fm-scanner-status">
+
+                        Iniciando cámara...
+
+                    </span>
+
+                </div>
+
+
+                <button type="button" id="restartScanner" class="fm-btn">
+
+                    ↻ Reiniciar
+
+                </button>
+
+            </div>
+
+
+            <div id="qrReader" class="fm-qr-reader">
+
+                <div class="fm-scanner-loading">
+
+                    <div class="fm-scanner-loading-icon">
+
+                        📷
+
+                    </div>
+
+                    <span>
+                        Preparando cámara...
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             RESULT
+        ========================================= -->
+
+        <div class="fm-scanner-result-panel">
+
+            <div class="fm-scanner-result-header">
+
+                <h2>
+                    Resultado
+                </h2>
+
+            </div>
+
+
+            <div id="scannerResult" class="fm-scanner-empty">
+
+                <div class="fm-scanner-empty-icon">
+
+                    ⌁
+
+                </div>
+
+                <strong>
+                    Esperando un código QR
+                </strong>
+
+                <span>
+                    Coloca una tarjeta digital frente a la cámara.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

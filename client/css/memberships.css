@@ -1,0 +1,155 @@
+.reception-container {
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 20px;
+
+    height: calc(100vh - 40px);
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+}
+
+.sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    background: var(--surface);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+
+}
+
+.results {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.membership-card {
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    background: white;
+
+}
+
+.membership-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+
+}
+
+.content {
+
+    background: var(--surface);
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+    overflow: auto;
+
+}
+
+.empty-state {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100%;
+
+    color: #888;
+
+    text-align: center;
+
+}
+
+.membership-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+.membership-profile hr {
+
+    border: none;
+
+    border-top: 1px solid var(--border);
+
+}
+
+.actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+.actions button {
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+}

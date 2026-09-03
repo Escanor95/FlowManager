@@ -1,0 +1,668 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    RESERVATION FLOW
+
+====================================================
+*/
+
+
+/* =========================================
+   LAYOUT PRINCIPAL
+========================================= */
+
+.fm-reservation-layout {
+
+    display: grid;
+
+    gap: 16px;
+
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.fm-reservation-section {
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-md);
+
+    box-shadow: var(--fm-shadow-sm);
+
+    padding: 16px;
+
+}
+
+
+.fm-reservation-section h2 {
+
+    color: var(--fm-text);
+
+    font-size: 17px;
+
+    margin: 0 0 10px;
+
+}
+
+
+.fm-reservation-help {
+
+    color: var(--fm-text-light);
+
+    font-size: 13px;
+
+    margin: -4px 0 12px;
+
+}
+
+
+/* =========================================
+   CLIENTA
+========================================= */
+
+.fm-reservation-client-search {
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-sm);
+
+    box-sizing: border-box;
+
+    color: var(--fm-text);
+
+    font: inherit;
+
+    padding: 10px 12px;
+
+    width: 100%;
+
+}
+
+
+.fm-reservation-client-results {
+
+    display: grid;
+
+    gap: 6px;
+
+    margin-top: 8px;
+
+    max-height: 180px;
+
+    overflow-y: auto;
+
+}
+
+
+.fm-reservation-client-option {
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-sm);
+
+    color: var(--fm-text);
+
+    cursor: pointer;
+
+    display: grid;
+
+    font: inherit;
+
+    gap: 3px;
+
+    padding: 9px 11px;
+
+    text-align: left;
+
+}
+
+
+.fm-reservation-client-option:hover {
+
+    border-color: var(--fm-primary);
+
+}
+
+
+.fm-reservation-client-option small {
+
+    color: var(--fm-text-light);
+
+}
+
+
+/* =========================================
+   MEMBRESÍA
+========================================= */
+
+.fm-reservation-membership {
+
+    background: var(--fm-primary-light);
+
+    border-radius: var(--fm-radius-sm);
+
+    color: var(--fm-text-light);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-top: 10px;
+
+    padding: 10px 12px;
+
+}
+
+
+.fm-reservation-membership strong {
+
+    color: var(--fm-text);
+
+}
+
+
+/* =========================================
+   INFORMACIÓN DEL COACH
+========================================= */
+
+.fm-reservation-coach-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.fm-reservation-coach-info strong {
+
+    color: var(--fm-text);
+
+    font-size: 14px;
+
+}
+
+
+.fm-reservation-coach-info span {
+
+    color: var(--fm-text-light);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   CALENDARIO
+========================================= */
+
+.fm-reservation-calendar-state {
+
+    min-height: 300px;
+
+}
+
+
+/* =========================================
+   TARJETAS DE CLASE
+========================================= */
+
+.fm-reservation-day-classes {
+
+    display: grid;
+
+    gap: 8px;
+
+    padding: 8px;
+
+}
+
+
+.fm-reservation-class {
+
+    align-items: center;
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: 12px;
+
+    box-shadow: var(--fm-shadow-sm);
+
+    color: var(--fm-text);
+
+    cursor: pointer;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    text-align: left;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease,
+        transform .15s ease;
+
+    width: 100%;
+
+}
+
+
+.fm-reservation-class:not(.disabled):hover {
+
+    border-color: var(--fm-primary);
+
+    transform: translateY(-1px);
+
+}
+
+
+.fm-reservation-class.selected {
+
+    background: var(--fm-primary-light);
+
+    border-color: var(--fm-primary);
+
+    box-shadow:
+        0 0 0 1px var(--fm-primary);
+
+}
+
+
+.fm-reservation-class.disabled {
+
+    cursor: not-allowed;
+
+    opacity: .45;
+
+}
+
+
+.fm-reservation-class-color {
+
+    border-radius: 6px;
+
+    flex: 0 0 4px;
+
+    height: 42px;
+
+}
+
+
+.fm-reservation-class-content {
+
+    min-width: 0;
+
+}
+
+
+.fm-reservation-class-title {
+
+    align-items: center;
+
+    display: flex;
+
+    gap: 6px;
+
+}
+
+
+.fm-reservation-class-title strong {
+
+    font-size: 14px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.fm-reservation-class-time,
+.fm-reservation-class-capacity {
+
+    color: var(--fm-text-light);
+
+    font-size: 12px;
+
+    margin-top: 3px;
+
+}
+
+
+/* =========================================
+   RESUMEN
+========================================= */
+
+.fm-reservation-summary {
+
+    color: var(--fm-text-light);
+
+}
+
+
+.fm-reservation-summary h3 {
+
+    color: var(--fm-text);
+
+    margin: 0 0 12px;
+
+}
+
+
+.fm-reservation-summary-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.fm-reservation-summary-item {
+
+    align-items: center;
+
+    border-bottom:
+        1px solid var(--fm-border);
+
+    color: var(--fm-text);
+
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: space-between;
+
+    min-height: 60px;
+
+    padding: 8px 0;
+
+}
+
+
+.fm-reservation-summary-item span {
+
+    flex: 1;
+
+    min-width: 0;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================
+   ESCRITORIO
+========================================= */
+
+@media (min-width: 900px) {
+
+
+    .fm-reservation-layout {
+
+        grid-template-columns:
+            minmax(0, 1fr) 320px;
+
+        align-items: start;
+
+    }
+
+
+    /* ----------------------------------------
+       CLIENTA / COACH
+    ---------------------------------------- */
+
+    .fm-reservation-client {
+
+        grid-column: 1;
+
+    }
+
+
+    /* ----------------------------------------
+       RESUMEN
+    ---------------------------------------- */
+
+    .fm-reservation-summary-section {
+
+        grid-column: 2;
+
+        grid-row: 1 / span 2;
+
+        position: sticky;
+
+        top: 20px;
+
+        align-self: start;
+
+    }
+
+
+    /* ----------------------------------------
+       CLASES
+    ---------------------------------------- */
+
+    .fm-reservation-classes {
+
+        grid-column: 1;
+
+    }
+
+
+    /* ----------------------------------------
+       RESUMEN CONTENIDO
+    ---------------------------------------- */
+
+    .fm-reservation-summary {
+
+        display: flex;
+
+        flex-direction: column;
+
+        height: 360px;
+
+        overflow: hidden;
+
+    }
+
+
+    /* ----------------------------------------
+       LISTA SCROLL
+    ---------------------------------------- */
+
+    .fm-reservation-summary-list {
+
+        flex: 1;
+
+        min-height: 0;
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+        padding:
+            0 6px 0 0;
+
+    }
+
+
+    .fm-reservation-summary-list::-webkit-scrollbar {
+
+        width: 5px;
+
+    }
+
+
+    .fm-reservation-summary-list::-webkit-scrollbar-thumb {
+
+        background:
+            rgba(255,
+                255,
+                255,
+                .15);
+
+        border-radius: 10px;
+
+    }
+
+
+    .fm-reservation-summary-list::-webkit-scrollbar-track {
+
+        background:
+            transparent;
+
+    }
+
+
+    /* ----------------------------------------
+       FILA
+    ---------------------------------------- */
+
+    .fm-reservation-summary-item {
+
+        flex-shrink: 0;
+
+        min-height: 76px;
+
+    }
+
+
+    /* ----------------------------------------
+       BOTÓN QUITAR
+    ---------------------------------------- */
+
+    .fm-reservation-summary-item .fm-btn {
+
+        flex-shrink: 0;
+
+        min-width: 110px;
+
+    }
+
+
+    /* ----------------------------------------
+       BOTÓN CONFIRMAR
+    ---------------------------------------- */
+
+    .fm-reservation-summary>.fm-btn-primary {
+
+        flex-shrink: 0;
+
+        margin-top: 14px;
+
+        padding: 15px;
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================
+   MÓVIL / TABLET
+========================================= */
+
+@media (max-width: 899px) {
+
+    .fm-reservation-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+    }
+
+
+    .fm-reservation-section {
+
+        padding: 12px;
+
+    }
+
+
+    .fm-reservation-summary-section {
+
+        position: static;
+
+    }
+
+
+    .fm-reservation-summary {
+
+        max-height: none;
+
+        overflow: visible;
+
+    }
+
+
+    .fm-reservation-summary-list {
+
+        margin: 12px 0;
+
+    }
+
+
+    .fm-reservation-summary-item {
+
+        align-items: center;
+
+    }
+
+}
+
+
+/* =========================================
+   MÓVIL PEQUEÑO
+========================================= */
+
+@media (max-width: 600px) {
+
+    .fm-reservation-section h2 {
+
+        font-size: 15px;
+
+    }
+
+
+    .fm-reservation-summary-item {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    .fm-reservation-summary-item .fm-btn {
+
+        width: 100%;
+
+    }
+
+}

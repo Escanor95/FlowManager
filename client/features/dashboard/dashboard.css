@@ -1,0 +1,1888 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    DASHBOARD
+
+====================================================
+*/
+
+
+/* ==================================================
+   MANAGER DASHBOARD
+================================================== */
+
+#managerDashboard {
+
+    width:
+        100%;
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+    padding:
+        4px 0 32px;
+
+}
+
+
+/* ==================================================
+   MANAGER HEADER
+================================================== */
+
+#managerDashboard .feature-header {
+
+    margin-bottom:
+        22px;
+
+}
+
+
+#managerDashboard .feature-header h2 {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin:
+        0;
+
+    color:
+        var(--fm-text-primary);
+
+    font-size:
+        30px;
+
+    line-height:
+        1.15;
+
+    font-weight:
+        750;
+
+}
+
+
+#managerDashboard .feature-header p {
+
+    margin:
+        6px 0 0;
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        14px;
+
+}
+
+
+/* ==================================================
+   KPI GRID
+================================================== */
+
+#managerDashboard .dashboard-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,
+            minmax(0,
+                1fr));
+
+    gap:
+        16px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+/* ==================================================
+   KPI CARD
+================================================== */
+
+#managerDashboard .dashboard-card {
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    min-height:
+        132px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    padding:
+        18px;
+
+    box-sizing:
+        border-box;
+
+    background:
+        var(--fm-surface);
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 6px 18px rgba(15,
+            23,
+            42,
+            .06);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+
+}
+
+
+#managerDashboard .dashboard-card:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(15,
+            23,
+            42,
+            .09);
+
+}
+
+
+#managerDashboard .dashboard-card h3 {
+
+    margin:
+        0;
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        650;
+
+}
+
+
+#managerDashboard .dashboard-card>span {
+
+    display:
+        block;
+
+    margin-top:
+        14px;
+
+    color:
+        var(--fm-text-primary);
+
+    font-size:
+        34px;
+
+    line-height:
+        1;
+
+    font-weight:
+        750;
+
+}
+
+
+/* ==================================================
+   KPI ACCENTS
+================================================== */
+
+#managerDashboard .dashboard-card:nth-child(1) {
+
+    border-top:
+        3px solid var(--fm-primary);
+
+}
+
+
+#managerDashboard .dashboard-card:nth-child(2) {
+
+    border-top:
+        3px solid #d79b5b;
+
+}
+
+
+#managerDashboard .dashboard-card:nth-child(3) {
+
+    border-top:
+        3px solid #7a9fd8;
+
+}
+
+
+#managerDashboard .dashboard-card:nth-child(4) {
+
+    border-top:
+        3px solid #9b74c8;
+
+}
+
+
+#managerDashboard .dashboard-card:nth-child(5) {
+
+    border-top:
+        3px solid #58b986;
+
+}
+
+
+#managerDashboard .dashboard-card:nth-child(6) {
+
+    border-top:
+        3px solid #6f85b8;
+
+}
+
+
+/* ==================================================
+   CAPACITY SECTION
+================================================== */
+
+#managerDashboard .dashboard-section {
+
+    padding:
+        20px;
+
+    background:
+        var(--fm-surface);
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 6px 18px rgba(15,
+            23,
+            42,
+            .06);
+
+}
+
+
+#managerDashboard .dashboard-section>h3 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        var(--fm-text-primary);
+
+    font-size:
+        18px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+}
+
+
+#managerDashboard .dashboard-placeholder {
+
+    padding:
+        14px 16px;
+
+    background:
+        var(--fm-background);
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        12px;
+
+}
+
+
+#managerDashboard .dashboard-placeholder span {
+
+    display:
+        block;
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* ==================================================
+   COACH DASHBOARD
+================================================== */
+
+#coachDashboard {
+
+    width:
+        100%;
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+    padding:
+        6px 0 32px;
+
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.fm-coach-dashboard-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        24px;
+
+    margin-bottom:
+        20px;
+
+}
+
+
+.fm-coach-dashboard-eyebrow {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .14em;
+
+    color:
+        var(--fm-primary);
+
+}
+
+
+.fm-coach-dashboard-header h2 {
+
+    margin:
+        0;
+
+    font-size:
+        30px;
+
+    line-height:
+        1.1;
+
+    font-weight:
+        750;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+.fm-coach-dashboard-header p {
+
+    margin:
+        7px 0 0;
+
+    font-size:
+        14px;
+
+    color:
+        var(--fm-text-secondary);
+
+}
+
+
+.fm-coach-dashboard-header-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.fm-coach-dashboard-date {
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        12px;
+
+    background:
+        var(--fm-surface);
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/* ==================================================
+   BOTÓN QR
+================================================== */
+
+#coachScanQrButton {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    min-height:
+        42px;
+
+    padding:
+        10px 16px;
+
+    border:
+        none;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--fm-primary);
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+
+}
+
+
+#coachScanQrButton:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(0,
+            0,
+            0,
+            .14);
+
+}
+
+
+#coachScanQrButton:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+#coachScanQrButton .material-symbols-outlined {
+
+    font-size:
+        19px;
+
+}
+
+
+/* ==================================================
+   FILTROS
+================================================== */
+
+.fm-coach-period-filters {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    padding:
+        4px;
+
+    margin-bottom:
+        22px;
+
+    background:
+        var(--fm-surface);
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 4px 14px rgba(0,
+            0,
+            0,
+            .05);
+
+}
+
+
+.fm-coach-period-button {
+
+    min-width:
+        70px;
+
+    padding:
+        8px 14px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        transparent;
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        13px;
+
+    font-weight:
+        650;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .18s ease,
+        color .18s ease;
+
+}
+
+
+.fm-coach-period-button:hover {
+
+    background:
+        rgba(0,
+            0,
+            0,
+            .04);
+
+}
+
+
+.fm-coach-period-button.active {
+
+    background:
+        var(--fm-primary);
+
+    color:
+        #ffffff;
+
+}
+
+
+/* ==================================================
+   SECCIONES
+================================================== */
+
+.fm-coach-next-section,
+.fm-coach-classes-section {
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.fm-coach-section-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        16px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.fm-coach-section-header h3 {
+
+    margin:
+        0;
+
+    font-size:
+        18px;
+
+    font-weight:
+        750;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+.fm-coach-class-count {
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+}
+
+
+/* ==================================================
+   PRÓXIMA CLASE
+================================================== */
+
+.fm-coach-next-class {
+
+    display:
+        flex;
+
+    align-items:
+        stretch;
+
+    justify-content:
+        space-between;
+
+    gap:
+        24px;
+
+    padding:
+        22px 24px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(169,
+                103,
+                103,
+                .97),
+            rgba(80,
+                49,
+                103,
+                .97));
+
+    border-radius:
+        18px;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(0,
+            0,
+            0,
+            .14);
+
+}
+
+
+.fm-coach-next-class-main {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    min-width:
+        0;
+
+}
+
+
+.fm-coach-next-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .14em;
+
+    opacity:
+        .78;
+
+}
+
+
+.fm-coach-next-class-main h3 {
+
+    margin:
+        0 0 6px;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.15;
+
+    font-weight:
+        750;
+
+    color:
+        #ffffff;
+
+}
+
+
+.fm-coach-next-class-main>strong {
+
+    font-size:
+        16px;
+
+    font-weight:
+        650;
+
+    color:
+        #ffffff;
+
+    opacity:
+        .95;
+
+}
+
+
+.fm-coach-next-class-stats {
+
+    display:
+        flex;
+
+    align-items:
+        stretch;
+
+    gap:
+        10px;
+
+    flex-shrink:
+        0;
+
+}
+
+
+.fm-coach-next-class-stats>div {
+
+    min-width:
+        92px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            .16);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .09);
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+.fm-coach-next-class-stats strong {
+
+    font-size:
+        22px;
+
+    line-height:
+        1;
+
+    font-weight:
+        750;
+
+    color:
+        #ffffff;
+
+}
+
+
+.fm-coach-next-class-stats span {
+
+    margin-top:
+        5px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            .78);
+
+    text-align:
+        center;
+
+}
+
+
+/* ==================================================
+   PRÓXIMA CLASE VACÍA
+================================================== */
+
+.fm-coach-next-class.empty {
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+    min-height:
+        108px;
+
+}
+
+
+.fm-coach-next-class.empty>div:last-child {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+}
+
+
+.fm-coach-next-class-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            .12);
+
+}
+
+
+.fm-coach-next-class-icon .material-symbols-outlined {
+
+    font-size:
+        26px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.fm-coach-next-class.empty strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        4px;
+
+    font-size:
+        17px;
+
+    color:
+        #ffffff;
+
+}
+
+
+.fm-coach-next-class.empty p {
+
+    margin:
+        0;
+
+    font-size:
+        13px;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            .74);
+
+}
+
+
+/* ==================================================
+   LISTA DE CLASES
+================================================== */
+
+.fm-coach-classes-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+}
+
+
+/* ==================================================
+   TARJETA DE CLASE
+================================================== */
+
+.fm-coach-class-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        105px minmax(0,
+            1fr);
+
+    overflow:
+        hidden;
+
+    background:
+        var(--fm-surface);
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 6px 18px rgba(0,
+            0,
+            0,
+            .06);
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+
+}
+
+
+.fm-coach-class-card:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 24px rgba(0,
+            0,
+            0,
+            .09);
+
+}
+
+
+/* ==================================================
+   HORA
+================================================== */
+
+.fm-coach-class-time {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        18px 12px;
+
+    background:
+        rgba(169,
+            103,
+            103,
+            .07);
+
+    border-right:
+        1px solid var(--fm-border);
+
+}
+
+
+.fm-coach-class-time strong {
+
+    font-size:
+        22px;
+
+    line-height:
+        1;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+.fm-coach-class-time span {
+
+    margin-top:
+        5px;
+
+    font-size:
+        12px;
+
+    color:
+        var(--fm-text-secondary);
+
+}
+
+
+/* ==================================================
+   CONTENIDO
+================================================== */
+
+.fm-coach-class-content {
+
+    min-width:
+        0;
+
+    padding:
+        18px 20px;
+
+}
+
+
+.fm-coach-class-title-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.fm-coach-class-title-row h4 {
+
+    margin:
+        0;
+
+    min-width:
+        0;
+
+    font-size:
+        17px;
+
+    font-weight:
+        750;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+/* ==================================================
+   ESTADOS
+================================================== */
+
+.fm-coach-class-status {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+}
+
+
+.fm-coach-class-status.upcoming {
+
+    background:
+        rgba(169,
+            103,
+            103,
+            .12);
+
+    color:
+        var(--fm-primary);
+
+}
+
+
+.fm-coach-class-status.started {
+
+    background:
+        rgba(42,
+            174,
+            114,
+            .12);
+
+    color:
+        #23935f;
+
+}
+
+
+.fm-coach-class-status.finished {
+
+    background:
+        rgba(120,
+            120,
+            120,
+            .11);
+
+    color:
+        #737373;
+
+}
+
+
+/* ==================================================
+   META
+================================================== */
+
+.fm-coach-class-meta {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        16px;
+
+    margin-top:
+        10px;
+
+}
+
+
+.fm-coach-class-meta>span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+.fm-coach-class-meta .material-symbols-outlined {
+
+    font-size:
+        17px;
+
+    color:
+        var(--fm-primary);
+
+}
+
+
+/* ==================================================
+   CLIENTAS
+================================================== */
+
+.fm-coach-class-clients {
+
+    margin-top:
+        15px;
+
+    padding-top:
+        13px;
+
+    border-top:
+        1px solid var(--fm-border);
+
+}
+
+
+.fm-coach-class-clients>strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        9px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+.fm-coach-client-list {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+}
+
+
+.fm-coach-client {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        6px 9px 6px 6px;
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(0,
+            0,
+            0,
+            .015);
+
+    color:
+        var(--fm-text-primary);
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+}
+
+
+.fm-coach-client-avatar {
+
+    width:
+        24px;
+
+    height:
+        24px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--fm-primary);
+
+    color:
+        #ffffff;
+
+    font-size:
+        9px;
+
+    font-weight:
+        750;
+
+}
+
+
+.fm-coach-no-clients {
+
+    display:
+        inline-block;
+
+    padding:
+        7px 10px;
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0,
+            0,
+            0,
+            .035);
+
+    color:
+        var(--fm-text-secondary);
+
+    font-size:
+        11px;
+
+}
+
+
+/* ==================================================
+   ESTADO VACÍO COACH
+================================================== */
+
+.fm-coach-empty {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        42px 24px;
+
+    text-align:
+        center;
+
+    background:
+        var(--fm-surface);
+
+    border:
+        1px dashed var(--fm-border);
+
+    border-radius:
+        16px;
+
+}
+
+
+.fm-coach-empty .material-symbols-outlined {
+
+    margin-bottom:
+        10px;
+
+    font-size:
+        34px;
+
+    color:
+        var(--fm-primary);
+
+}
+
+
+.fm-coach-empty strong {
+
+    font-size:
+        15px;
+
+    color:
+        var(--fm-text-primary);
+
+}
+
+
+.fm-coach-empty p {
+
+    margin:
+        6px 0 0;
+
+    font-size:
+        12px;
+
+    color:
+        var(--fm-text-secondary);
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+    #managerDashboard .dashboard-grid {
+
+        grid-template-columns:
+            repeat(2,
+                minmax(0,
+                    1fr));
+
+    }
+
+
+    #coachDashboard {
+
+        padding-bottom:
+            24px;
+
+    }
+
+
+    .fm-coach-dashboard-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .fm-coach-dashboard-header-actions {
+
+        width:
+            100%;
+
+        justify-content:
+            space-between;
+
+    }
+
+
+    .fm-coach-next-class {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .fm-coach-next-class-stats {
+
+        width:
+            100%;
+
+    }
+
+
+    .fm-coach-next-class-stats>div {
+
+        flex:
+            1;
+
+        min-width:
+            0;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    #managerDashboard {
+
+        padding:
+            2px 0 24px;
+
+    }
+
+
+    #managerDashboard .feature-header h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    #managerDashboard .dashboard-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            12px;
+
+    }
+
+
+    #managerDashboard .dashboard-card {
+
+        min-height:
+            112px;
+
+    }
+
+
+    #managerDashboard .dashboard-card>span {
+
+        font-size:
+            30px;
+
+    }
+
+
+    #managerDashboard .dashboard-section {
+
+        padding:
+            16px;
+
+    }
+
+
+    .fm-coach-dashboard-header h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .fm-coach-dashboard-header-actions {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .fm-coach-dashboard-date {
+
+        text-align:
+            center;
+
+    }
+
+
+    #coachScanQrButton {
+
+        width:
+            100%;
+
+    }
+
+
+    .fm-coach-period-filters {
+
+        width:
+            100%;
+
+    }
+
+
+    .fm-coach-period-button {
+
+        flex:
+            1;
+
+    }
+
+
+    .fm-coach-next-class {
+
+        padding:
+            18px;
+
+    }
+
+
+    .fm-coach-next-class-stats {
+
+        gap:
+            7px;
+
+    }
+
+
+    .fm-coach-next-class-stats>div {
+
+        padding:
+            10px 7px;
+
+    }
+
+
+    .fm-coach-next-class-stats strong {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .fm-coach-class-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .fm-coach-class-time {
+
+        flex-direction:
+            row;
+
+        justify-content:
+            flex-start;
+
+        align-items:
+            baseline;
+
+        gap:
+            7px;
+
+        padding:
+            12px 16px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid var(--fm-border);
+
+    }
+
+
+    .fm-coach-class-time span {
+
+        margin-top:
+            0;
+
+    }
+
+
+    .fm-coach-class-content {
+
+        padding:
+            15px 16px;
+
+    }
+
+
+    .fm-coach-class-title-row {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}

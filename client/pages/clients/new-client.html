@@ -5,15 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <title>Nuevo Cliente</title>
+    <title id="formTitle">Registrar Cliente</title>
 
 </head>
 
 <body>
 
-    <h1>Registrar Cliente</h1>
+    <h1 id="formHeading">Registrar Cliente</h1>
 
     <form id="clientForm">
+
+        <input type="hidden" id="clientId">
 
         <label>Nombre completo</label><br>
         <input type="text" id="fullName" required>
@@ -34,25 +36,23 @@
 
         <select id="membershipType">
 
-            <option>Mensual</option>
+            <option value="Mensual">Mensual</option>
 
-            <option>Trimestral</option>
+            <option value="Trimestral">Trimestral</option>
 
-            <option>Anual</option>
+            <option value="Anual">Anual</option>
 
         </select>
 
         <br><br>
 
-        <button type="submit">
+        <button type="submit" id="saveClientButton">
 
             Guardar Cliente
 
         </button>
 
     </form>
-
-    <script src="../../js/newClient.js"></script>
 
 </body>
 

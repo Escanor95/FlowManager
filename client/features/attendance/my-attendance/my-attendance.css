@@ -1,0 +1,243 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    MY ATTENDANCE
+
+====================================================
+*/
+
+.fm-my-attendance {
+
+    display: grid;
+
+    gap: 20px;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.fm-my-attendance-header h2 {
+
+    margin: 0;
+
+    color: var(--fm-text);
+
+    font-size: 24px;
+
+}
+
+
+.fm-my-attendance-header p {
+
+    margin: 6px 0 0;
+
+    color: var(--fm-text-light);
+
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.fm-my-attendance-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(180px, 1fr));
+
+    gap: 16px;
+
+}
+
+
+.fm-my-attendance-stat {
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-md);
+
+    box-shadow: var(--fm-shadow-sm);
+
+    padding: 18px;
+
+}
+
+
+.fm-my-attendance-stat-label {
+
+    color: var(--fm-text-light);
+
+    font-size: 13px;
+
+}
+
+
+.fm-my-attendance-stat-value {
+
+    color: var(--fm-text);
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================
+   HISTORIAL
+========================================= */
+
+.fm-my-attendance-section {
+
+    background: var(--fm-surface);
+
+    border: 1px solid var(--fm-border);
+
+    border-radius: var(--fm-radius-md);
+
+    box-shadow: var(--fm-shadow-sm);
+
+    overflow: hidden;
+
+}
+
+
+.fm-my-attendance-section-header {
+
+    border-bottom:
+        1px solid var(--fm-border);
+
+    padding: 16px 18px;
+
+}
+
+
+.fm-my-attendance-section-header h3 {
+
+    margin: 0;
+
+    color: var(--fm-text);
+
+}
+
+
+.fm-my-attendance-list {
+
+    display: grid;
+
+}
+
+
+.fm-my-attendance-item {
+
+    align-items: center;
+
+    border-bottom:
+        1px solid var(--fm-border);
+
+    display: flex;
+
+    gap: 14px;
+
+    justify-content: space-between;
+
+    padding: 16px 18px;
+
+}
+
+
+.fm-my-attendance-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.fm-my-attendance-item-info {
+
+    min-width: 0;
+
+}
+
+
+.fm-my-attendance-item-title {
+
+    color: var(--fm-text);
+
+    font-weight: 600;
+
+}
+
+
+.fm-my-attendance-item-date {
+
+    color: var(--fm-text-light);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+
+}
+
+
+.fm-my-attendance-item-status {
+
+    background: var(--fm-primary-light);
+
+    border-radius: 999px;
+
+    color: var(--fm-primary);
+
+    flex-shrink: 0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    padding: 6px 10px;
+
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.fm-my-attendance-empty {
+
+    color: var(--fm-text-light);
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .fm-my-attendance-item {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+}

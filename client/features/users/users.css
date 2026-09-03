@@ -1,0 +1,606 @@
+.fm-user-form-container {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.fm-user-form-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fm-user-form-grid .fm-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fm-user-form-grid label {
+    color: var(--fm-text);
+    font-weight: 600;
+}
+
+.fm-user-form-grid input,
+.fm-user-form-grid select {
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-sm);
+    box-sizing: border-box;
+    font: inherit;
+    padding: 11px 12px;
+    width: 100%;
+}
+
+.fm-user-form-grid small {
+    color: var(--fm-text-light);
+}
+
+
+/* ====================================================
+   LISTA DE USUARIOS
+==================================================== */
+
+.fm-users-list {
+    display: grid;
+    gap: 12px;
+}
+
+.fm-user-card {
+    align-items: center;
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    cursor: pointer;
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    padding: 16px 18px;
+    text-align: left;
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.fm-user-card:hover {
+    border-color: var(--fm-primary);
+    box-shadow: var(--fm-shadow-md);
+    transform: translateY(-1px);
+}
+
+.fm-user-card-avatar,
+.fm-user-profile-avatar {
+    align-items: center;
+    background: var(--fm-primary-light);
+    border-radius: 50%;
+    color: var(--fm-primary);
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 700;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fm-user-card-avatar {
+    height: 46px;
+    width: 46px;
+}
+
+.fm-user-card-avatar img,
+.fm-user-profile-avatar img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.fm-user-info {
+    display: grid;
+    flex: 1;
+    gap: 4px;
+    min-width: 0;
+}
+
+.fm-user-info strong {
+    color: var(--fm-text);
+}
+
+.fm-user-info span,
+.fm-user-info small {
+    color: var(--fm-text-light);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fm-user-card-arrow {
+    color: var(--fm-text-light);
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* ====================================================
+   PASSWORD
+==================================================== */
+
+.fm-password-wrapper {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.fm-password-wrapper input {
+    box-sizing: border-box;
+    padding-right: 42px;
+    width: 100%;
+}
+
+.fm-password-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    position: absolute;
+    right: 8px;
+}
+
+
+/* ====================================================
+   CREDENCIALES
+==================================================== */
+
+.fm-user-credentials {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.fm-user-credentials h3 {
+    color: var(--fm-text);
+    margin: 0 0 5px;
+}
+
+.fm-user-credentials p {
+    color: var(--fm-text-light);
+    margin: 0 0 15px;
+}
+
+.fm-credentials-box {
+    background: var(--fm-primary-light);
+    border-radius: var(--fm-radius-sm);
+    display: grid;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.fm-credentials-box div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.fm-credentials-box strong {
+    color: var(--fm-text);
+}
+
+.fm-credentials-box span {
+    color: var(--fm-text-light);
+    word-break: break-word;
+}
+
+
+/* ====================================================
+   DETALLE DE USUARIO
+==================================================== */
+
+.fm-user-detail {
+    display: grid;
+    gap: 20px;
+}
+
+.fm-user-detail-header {
+    display: flex;
+    align-items: center;
+}
+
+.fm-user-profile {
+    align-items: center;
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+}
+
+.fm-user-profile-avatar {
+    font-size: 26px;
+    height: 90px;
+    width: 90px;
+}
+
+.fm-user-profile-main {
+    display: grid;
+    flex: 1;
+    gap: 8px;
+}
+
+.fm-user-profile-main h2 {
+    color: var(--fm-text);
+    margin: 0;
+}
+
+.fm-user-id {
+    color: var(--fm-text-light);
+    font-size: 13px;
+}
+
+.fm-status-badge {
+    background: var(--fm-primary-light);
+    border-radius: 999px;
+    color: var(--fm-primary);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    width: fit-content;
+}
+
+.fm-user-detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.fm-root-badge {
+    background: var(--fm-text);
+    border-radius: 999px;
+    color: var(--fm-surface);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 7px 12px;
+}
+
+.fm-user-detail-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.fm-user-detail-item {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    display: grid;
+    gap: 6px;
+    padding: 18px;
+}
+
+.fm-user-detail-item strong {
+    color: var(--fm-text);
+    font-size: 13px;
+}
+
+.fm-user-detail-item span {
+    color: var(--fm-text-light);
+}
+
+
+/* ====================================================
+   TARJETA DIGITAL
+==================================================== */
+
+.fm-digital-card-page {
+    display: grid;
+    gap: 24px;
+}
+
+.fm-digital-card-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fm-digital-card-header h2 {
+    color: var(--fm-text);
+    margin: 0;
+}
+
+.fm-digital-card-header p {
+    color: var(--fm-text-light);
+    margin: 5px 0 0;
+}
+
+.fm-digital-card-layout {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(280px, 430px) minmax(0, 1fr);
+}
+
+
+/* ====================================================
+   TARJETA
+==================================================== */
+
+.fm-digital-card {
+    background:
+        linear-gradient(145deg,
+            var(--fm-primary),
+            #2d1b69);
+    border-radius: 28px;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.25);
+    color: white;
+    min-height: 540px;
+    overflow: hidden;
+    padding: 28px;
+    position: relative;
+}
+
+.fm-digital-card::before {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    content: "";
+    height: 330px;
+    position: absolute;
+    right: -130px;
+    top: -130px;
+    width: 330px;
+}
+
+.fm-digital-card::after {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    content: "";
+    height: 230px;
+    left: -100px;
+    position: absolute;
+    bottom: -110px;
+    width: 230px;
+}
+
+.fm-digital-card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 484px;
+    position: relative;
+    z-index: 1;
+}
+
+.fm-digital-card-brand {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fm-digital-card-brand strong {
+    font-size: 22px;
+    letter-spacing: -0.03em;
+}
+
+.fm-digital-card-brand span {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+}
+
+.fm-digital-card-profile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 48px;
+    text-align: center;
+}
+
+.fm-digital-card-avatar {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.16);
+    border: 3px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+    display: flex;
+    font-size: 30px;
+    font-weight: 700;
+    height: 100px;
+    justify-content: center;
+    overflow: hidden;
+    width: 100px;
+}
+
+.fm-digital-card-avatar img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.fm-digital-card-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 16px;
+}
+
+.fm-digital-card-role {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0.72;
+}
+
+.fm-digital-card-id {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-top: 12px;
+    opacity: 0.58;
+}
+
+.fm-digital-card-qr {
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 0;
+    padding: 14px;
+    width: fit-content;
+}
+
+.fm-digital-card-qr canvas,
+.fm-digital-card-qr img {
+    display: block;
+    height: 160px;
+    width: 160px;
+}
+
+.fm-digital-card-footer {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.fm-digital-card-footer span {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.fm-digital-card-status {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    gap: 6px;
+}
+
+.fm-digital-card-status::before {
+    background: #6ee7a8;
+    border-radius: 50%;
+    content: "";
+    height: 7px;
+    width: 7px;
+}
+
+
+/* ====================================================
+   PANEL DE INFORMACIÓN
+==================================================== */
+
+.fm-digital-card-info {
+    align-content: start;
+    display: grid;
+    gap: 16px;
+}
+
+.fm-digital-card-info-panel {
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    box-shadow: var(--fm-shadow-sm);
+    padding: 22px;
+}
+
+.fm-digital-card-info-panel h3 {
+    color: var(--fm-text);
+    margin: 0 0 8px;
+}
+
+.fm-digital-card-info-panel p {
+    color: var(--fm-text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.fm-digital-card-user-data {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.fm-digital-card-user-data div {
+    border-bottom: 1px solid var(--fm-border);
+    display: grid;
+    gap: 4px;
+    padding-bottom: 12px;
+}
+
+.fm-digital-card-user-data div:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.fm-digital-card-user-data strong {
+    color: var(--fm-text);
+    font-size: 12px;
+}
+
+.fm-digital-card-user-data span {
+    color: var(--fm-text-light);
+}
+
+
+/* ====================================================
+   RESPONSIVE
+==================================================== */
+
+@media (max-width: 900px) {
+
+    .fm-digital-card-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .fm-digital-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 430px;
+        box-sizing: border-box;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .fm-user-form-grid,
+    .fm-user-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fm-user-card {
+        align-items: center;
+    }
+
+    .fm-user-profile {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .fm-digital-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .fm-digital-card {
+        border-radius: 22px;
+        min-height: 510px;
+        padding: 22px;
+    }
+
+    .fm-digital-card-qr canvas,
+    .fm-digital-card-qr img {
+        height: 145px;
+        width: 145px;
+    }
+
+}

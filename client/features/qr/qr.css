@@ -1,0 +1,726 @@
+/*
+====================================================
+
+    FLOWMANAGER
+
+    QR DIGITAL ID
+
+====================================================
+*/
+
+
+/* ====================================================
+   PAGE
+==================================================== */
+
+.fm-qr-page {
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding:
+        14px 24px 30px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ====================================================
+   DIGITAL ID CARD
+==================================================== */
+
+.fm-digital-id-card {
+
+    position: relative;
+
+    width: 430px;
+
+    max-width: 100%;
+
+    height: 590px;
+
+    padding:
+        28px 30px 24px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+
+        linear-gradient(145deg,
+
+            #9d6b68 0%,
+
+            #795168 52%,
+
+            #47316d 100%);
+
+    color: #ffffff;
+
+    box-shadow:
+
+        0 18px 40px rgba(40,
+            28,
+            55,
+            0.22);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* ====================================================
+   DECORACIÓN
+==================================================== */
+
+.fm-digital-id-orbit {
+
+    position: absolute;
+
+    border:
+        1px solid rgba(255,
+            255,
+            255,
+            0.15);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.fm-digital-id-orbit-top {
+
+    width: 250px;
+
+    height: 250px;
+
+    top: -145px;
+
+    right: -65px;
+
+}
+
+
+.fm-digital-id-orbit-bottom {
+
+    width: 220px;
+
+    height: 220px;
+
+    bottom: -145px;
+
+    left: -105px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.025);
+
+}
+
+
+/* ====================================================
+   HEADER
+==================================================== */
+
+.fm-digital-id-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.fm-digital-id-header strong {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+
+}
+
+
+.fm-digital-id-header span {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    opacity: 0.78;
+
+}
+
+
+/* ====================================================
+   AVATAR
+==================================================== */
+
+.fm-digital-id-avatar {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 94px;
+
+    height: 94px;
+
+    margin:
+        24px auto 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        3px solid rgba(255,
+            255,
+            255,
+            0.35);
+
+    border-radius: 50%;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+
+/* ====================================================
+   USER
+==================================================== */
+
+.fm-digital-id-user {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+.fm-digital-id-user h2 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+}
+
+
+.fm-digital-id-user>span {
+
+    margin-top: 5px;
+
+    font-size: 17px;
+
+    opacity: 0.86;
+
+}
+
+
+/* ====================================================
+   CLIENT ID
+==================================================== */
+
+.fm-digital-id-client-id {
+
+    margin-top: 12px;
+
+    padding:
+        8px 20px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.11);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+/* ====================================================
+   DIVIDER
+==================================================== */
+
+.fm-digital-id-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        20px 0 12px;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.15);
+
+}
+
+
+/* ====================================================
+   QR LABEL
+==================================================== */
+
+.fm-digital-id-qr-label {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ====================================================
+   QR WRAPPER
+==================================================== */
+
+.fm-digital-id-qr-wrapper {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* ====================================================
+   QR CONTAINER
+==================================================== */
+
+.fm-qr-code-container {
+
+    width: 180px;
+
+    height: 180px;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+}
+
+
+.fm-qr-code-container img,
+
+.fm-qr-code-container canvas {
+
+    display: block;
+
+    width: 160px !important;
+
+    height: 160px !important;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+/* ====================================================
+   FOOTER
+==================================================== */
+
+.fm-digital-id-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin-top: auto;
+
+    padding-top: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.fm-digital-id-footer>span {
+
+    font-size: 11px;
+
+    opacity: 0.75;
+
+}
+
+
+.fm-digital-id-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    white-space: nowrap;
+
+}
+
+
+.fm-digital-id-status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #65d79b;
+
+    box-shadow:
+
+        0 0 8px rgba(101,
+            215,
+            155,
+            0.55);
+
+}
+
+
+.fm-digital-id-status strong {
+
+    font-size: 12px;
+
+}
+
+
+/* ====================================================
+   LOADING
+==================================================== */
+
+.fm-qr-loading {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #555555;
+
+    text-align: center;
+
+}
+
+
+.fm-qr-spinner {
+
+    width: 30px;
+
+    height: 30px;
+
+    border:
+        3px solid #e5e5e5;
+
+    border-top-color:
+        #75506a;
+
+    border-radius: 50%;
+
+    animation:
+        fmQrSpin 0.8s linear infinite;
+
+}
+
+
+@keyframes fmQrSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* ====================================================
+   ERROR
+==================================================== */
+
+.fm-qr-error {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #555555;
+
+    text-align: center;
+
+}
+
+
+.fm-qr-error p {
+
+    margin: 0;
+
+}
+
+
+.fm-qr-retry {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding:
+        9px 16px;
+
+    cursor: pointer;
+
+}
+
+
+/* ====================================================
+   TABLET
+==================================================== */
+
+@media (max-width: 900px) {
+
+    .fm-qr-page {
+
+        padding:
+            12px 18px 24px;
+
+    }
+
+}
+
+
+/* ====================================================
+   MOBILE
+==================================================== */
+
+@media (max-width: 600px) {
+
+    .fm-qr-page {
+
+        padding:
+            12px;
+
+    }
+
+
+    .fm-digital-id-card {
+
+        width: 100%;
+
+        max-width: 430px;
+
+        height: 560px;
+
+        padding:
+            24px 22px 20px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .fm-digital-id-header strong {
+
+        font-size: 21px;
+
+    }
+
+
+    .fm-digital-id-header span {
+
+        font-size: 10px;
+
+    }
+
+
+    .fm-digital-id-avatar {
+
+        width: 86px;
+
+        height: 86px;
+
+        margin-top: 20px;
+
+        font-size: 31px;
+
+    }
+
+
+    .fm-digital-id-user h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .fm-digital-id-user>span {
+
+        font-size: 16px;
+
+    }
+
+
+    .fm-digital-id-client-id {
+
+        font-size: 13px;
+
+        padding:
+            7px 17px;
+
+    }
+
+
+    .fm-digital-id-divider {
+
+        margin:
+            18px 0 11px;
+
+    }
+
+
+    .fm-qr-code-container {
+
+        width: 165px;
+
+        height: 165px;
+
+    }
+
+
+    .fm-qr-code-container img,
+
+    .fm-qr-code-container canvas {
+
+        width: 145px !important;
+
+        height: 145px !important;
+
+    }
+
+
+    .fm-digital-id-footer>span {
+
+        font-size: 10px;
+
+    }
+
+
+    .fm-digital-id-status strong {
+
+        font-size: 11px;
+
+    }
+
+}

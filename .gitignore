@@ -1,9 +1,16 @@
 node_modules/
+.env
+.env.*
+!.env.example
 
-database/*.db
+*.log
 
 .vscode/
 
-.DS_Store
+npm-debug.log*
 
-.env
+.DS_Store
+Thumbs.db
+# Production/local database
+database/*.db
+database/*.db-*

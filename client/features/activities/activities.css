@@ -1,0 +1,148 @@
+.activities-module {
+
+    display: grid;
+
+    grid-template-columns: 340px 1fr;
+
+    gap: 24px;
+
+    min-height: 100%;
+
+}
+
+
+.activities-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+.activities-toolbar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+#searchActivity {
+
+    width: 100%;
+
+}
+
+
+#activityResults {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.activity-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    background: white;
+
+}
+
+
+.activity-card:hover {
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+
+}
+
+
+.activity-color {
+
+    width: 16px;
+
+    height: 16px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+
+}
+
+
+.activities-details {
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    overflow: auto;
+
+}
+
+
+.class-preview {
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+.preview-icon {
+
+    font-size: 70px;
+
+}
+
+
+.fm-actions {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+}

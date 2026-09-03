@@ -1,0 +1,1251 @@
+/* ==================================================
+   AURA WELLNESS
+   COMPONENTS
+================================================== */
+
+
+/* ==================================================
+   APP SHELL
+================================================== */
+
+.app-shell {
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    position:
+        relative;
+
+}
+
+
+.app-content {
+
+    width:
+        100%;
+
+    min-height:
+        100vh;
+
+    padding:
+        24px 24px calc(100px + env(safe-area-inset-bottom));
+
+}
+
+
+/* ==================================================
+   LOGIN PAGE
+================================================== */
+
+.login-page {
+
+    width:
+        100%;
+
+    min-height:
+        calc(100vh - 48px);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    padding:
+        24px 16px;
+
+}
+
+
+/* ==================================================
+   AURA BRAND
+================================================== */
+
+.aura-brand {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        54px;
+
+}
+
+
+.aura-brand-logo {
+
+    width:
+        72px;
+
+    height:
+        72px;
+
+    object-fit:
+        contain;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.aura-brand-name {
+
+    color:
+        var(--color-gold-light);
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        4px;
+
+    text-align:
+        center;
+
+}
+
+
+/* ==================================================
+   LOGIN HEADER
+================================================== */
+
+.login-header {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        32px;
+
+}
+
+
+.login-header h1 {
+
+    margin:
+        0 0 10px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        30px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.2;
+
+}
+
+
+.login-header p {
+
+    margin:
+        0;
+
+    color:
+        var(--color-gray);
+
+    font-size:
+        13px;
+
+}
+
+
+/* ==================================================
+   LOGIN FORM
+================================================== */
+
+.login-form {
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        16px;
+
+}
+
+
+/* ==================================================
+   INPUT CONTAINER
+================================================== */
+
+.login-input {
+
+    width:
+        100%;
+
+    height:
+        72px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        0 18px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(255,
+                255,
+                255,
+                0.035),
+
+            rgba(255,
+                255,
+                255,
+                0.015));
+
+    border:
+        1px solid rgba(230,
+            195,
+            168,
+            0.18);
+
+    border-radius:
+        var(--radius-medium);
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+.login-input:focus-within {
+
+    border-color:
+        var(--color-gold);
+
+    box-shadow:
+        0 0 0 3px rgba(201,
+            142,
+            104,
+            0.08);
+
+}
+
+
+.login-input>i {
+
+    width:
+        18px;
+
+    flex-shrink:
+        0;
+
+    color:
+        var(--color-gold);
+
+    font-size:
+        17px;
+
+    text-align:
+        center;
+
+}
+
+
+.login-input input {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    height:
+        100%;
+
+    background:
+        transparent !important;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        14px;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+}
+
+
+.login-input input::placeholder {
+
+    color:
+        var(--color-gray);
+
+    opacity:
+        1;
+
+}
+
+
+/* ==================================================
+   PASSWORD TOGGLE
+================================================== */
+
+.password-toggle {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-gray);
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+.password-toggle:hover {
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.password-toggle:active {
+
+    transform:
+        scale(0.92);
+
+}
+
+
+.password-toggle i {
+
+    font-size:
+        17px;
+
+}
+
+
+/* ==================================================
+   LOGIN OPTIONS
+================================================== */
+
+.login-options {
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        16px;
+
+    margin:
+        0 0 14px;
+
+}
+
+
+/* ==================================================
+   REMEMBER ME
+================================================== */
+
+.remember-option {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    color:
+        var(--color-gray);
+
+    font-size:
+        11px;
+
+    cursor:
+        pointer;
+
+    user-select:
+        none;
+
+}
+
+
+.remember-option input {
+
+    position:
+        absolute;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+}
+
+
+.custom-checkbox {
+
+    width:
+        18px;
+
+    height:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-shrink:
+        0;
+
+    position:
+        relative;
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.02);
+
+    border:
+        1px solid rgba(201,
+            142,
+            104,
+            0.45);
+
+    border-radius:
+        5px;
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+.custom-checkbox::after {
+
+    content:
+        "";
+
+    width:
+        4px;
+
+    height:
+        8px;
+
+    border:
+        solid var(--color-black);
+
+    border-width:
+        0 2px 2px 0;
+
+    transform:
+        rotate(45deg) scale(0);
+
+    margin-top:
+        -2px;
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+.remember-option input:checked+.custom-checkbox {
+
+    background:
+        var(--color-gold);
+
+    border-color:
+        var(--color-gold);
+
+}
+
+
+.remember-option input:checked+.custom-checkbox::after {
+
+    transform:
+        rotate(45deg) scale(1);
+
+}
+
+
+/* ==================================================
+   FORGOT PASSWORD
+================================================== */
+
+.forgot-password {
+
+    padding:
+        4px 0;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    color:
+        var(--color-gold);
+
+    font-size:
+        11px;
+
+    white-space:
+        nowrap;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition-fast);
+
+}
+
+
+.forgot-password:hover {
+
+    color:
+        var(--color-gold-light);
+
+}
+
+
+.forgot-password:active {
+
+    opacity:
+        0.7;
+
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+.button {
+
+    width:
+        100%;
+
+    min-height:
+        56px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        0 24px;
+
+    border:
+        none;
+
+    border-radius:
+        var(--radius-medium);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        var(--transition-normal);
+
+}
+
+
+.button-primary {
+
+    background:
+        linear-gradient(135deg,
+            var(--color-gold-light),
+            var(--color-gold));
+
+    color:
+        #241713;
+
+    box-shadow:
+        var(--shadow-copper);
+
+}
+
+
+.button-primary:hover {
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 14px 32px rgba(201,
+            142,
+            104,
+            0.30);
+
+}
+
+
+.button-primary:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+.button-outline {
+
+    background:
+        transparent;
+
+    color:
+        var(--color-gold);
+
+    border:
+        1px solid var(--color-gold);
+
+}
+
+
+/* ==================================================
+   GENERAL SECTIONS
+================================================== */
+
+.section {
+
+    width:
+        100%;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.section-title {
+
+    margin:
+        0 0 8px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        28px;
+
+    font-weight:
+        700;
+
+}
+
+
+.section-subtitle {
+
+    color:
+        var(--color-gray);
+
+    font-size:
+        14px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.card {
+
+    width:
+        100%;
+
+    background:
+        var(--color-black-card);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius-medium);
+
+    box-shadow:
+        var(--shadow-soft);
+
+}
+
+
+.card-padding {
+
+    padding:
+        24px;
+
+}
+
+
+/* ==================================================
+   EMPTY STATE
+================================================== */
+
+.empty-state {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    min-height:
+        220px;
+
+}
+
+
+.empty-icon {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        18px;
+
+    color:
+        var(--color-gold);
+
+    background:
+        rgba(201,
+            142,
+            104,
+            0.10);
+
+    border-radius:
+        50%;
+
+    font-size:
+        26px;
+
+}
+
+
+.empty-title {
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--color-white);
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+}
+
+
+.empty-text {
+
+    max-width:
+        280px;
+
+    color:
+        var(--color-gray);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* ==================================================
+   APP HEADER
+================================================== */
+
+.app-header {
+
+    width:
+        100%;
+
+    height:
+        64px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.app-title {
+
+    color:
+        var(--color-white);
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+}
+
+
+.header-button {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-gold);
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+}
+
+
+/* ==================================================
+   BOTTOM NAVIGATION
+================================================== */
+
+.bottom-navigation {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        0;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        100%;
+
+    max-width:
+        520px;
+
+    height:
+        82px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-around;
+
+    padding:
+        0 12px env(safe-area-inset-bottom);
+
+    background:
+        rgba(18,
+            18,
+            21,
+            0.96);
+
+    border-top:
+        1px solid var(--border-color);
+
+    backdrop-filter:
+        blur(18px);
+
+}
+
+
+.nav-item {
+
+    min-width:
+        54px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-gray);
+
+    font-size:
+        10px;
+
+}
+
+
+.nav-item i {
+
+    font-size:
+        18px;
+
+}
+
+
+.nav-item.active {
+
+    color:
+        var(--color-gold);
+
+}
+
+
+.nav-qr-wrapper {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    margin-top:
+        -34px;
+
+}
+
+
+.nav-qr {
+
+    width:
+        58px;
+
+    height:
+        58px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        linear-gradient(135deg,
+            var(--color-gold-light),
+            var(--color-gold));
+
+    color:
+        var(--color-black);
+
+    border:
+        5px solid var(--color-black-soft);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        var(--shadow-copper);
+
+    font-size:
+        22px;
+
+}
+
+
+.nav-qr-label {
+
+    color:
+        var(--color-gold);
+
+    font-size:
+        10px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 380px) {
+
+    .login-page {
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .login-options {
+
+        gap:
+            8px;
+
+    }
+
+
+    .forgot-password {
+
+        font-size:
+            10px;
+
+    }
+
+}
+
+/* ==========================================
+   USER MENU
+========================================== */
+
+.header-menu-wrapper {
+
+    position:
+        relative;
+
+}
+
+
+.user-menu {
+
+    position:
+        absolute;
+
+    top:
+        46px;
+
+    left:
+        0;
+
+    min-width:
+        170px;
+
+    padding:
+        8px;
+
+    background:
+        var(--color-black-card);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        14px;
+
+    box-shadow:
+        var(--shadow-soft);
+
+    z-index:
+        9999;
+
+}
+
+
+.user-menu.hidden {
+
+    display:
+        none;
+
+}
+
+
+.user-menu-item {
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        12px 14px;
+
+    background:
+        transparent;
+
+    color:
+        var(--color-gold-light);
+
+    border-radius:
+        10px;
+
+    text-align:
+        left;
+
+}
+
+
+.user-menu-item:active {
+
+    background:
+        rgba(201,
+            142,
+            104,
+            0.12);
+
+}
+
+
+.user-menu-item i {
+
+    color:
+        var(--color-gold);
+
+}

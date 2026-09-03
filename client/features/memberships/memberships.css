@@ -1,0 +1,114 @@
+.feature-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.feature-header h2 {
+
+    margin: 0;
+
+}
+
+.feature-header p {
+
+    margin-top: 5px;
+
+    color: var(--text-secondary);
+
+}
+
+.memberships-layout {
+
+    display: grid;
+
+    grid-template-columns: 320px 1fr;
+
+    gap: 20px;
+
+}
+
+.memberships-sidebar {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+.membership-results {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.membership-card {
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    background: var(--surface);
+
+}
+
+.membership-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: var(--primary);
+
+}
+
+.membership-content {
+
+    background: var(--surface);
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    min-height: 500px;
+
+}
+
+.empty-state {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100%;
+
+    color: var(--text-secondary);
+
+    text-align: center;
+
+}
+
+.membership-card.selected {
+    border-color: var(--primary, #8A6A45);
+    box-shadow: 0 0 0 2px rgba(138, 106, 69, 0.14);
+}

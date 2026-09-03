@@ -1,120 +1,358 @@
-async function loadNewClientForm() {
+let editingClient = null;
+
+window.loadNewClientForm = async function (client = null) {
+
+    editingClient = client;
 
     try {
 
         const html = await FeatureManager.load(
+
             "clients/newClient/newClient"
+
         );
 
         openModal(html);
 
-        initializeNewClient();
-
-    }
-    catch (error) {
-
-        console.error("Error cargando el formulario:", error);
+        await initializeNewClientForm();
 
     }
 
-}
-
-function initializeNewClient() {
-
-    const form = document.getElementById("newClientForm");
-
-    const cancelButton = document.getElementById("cancelNewClient");
-
-    cancelButton.addEventListener("click", () => {
-
-        closeModal();
-
-    });
-
-    form.addEventListener("submit", saveNewClient);
-
-}
-
-async function saveNewClient(event) {
-
-    event.preventDefault();
-
-    const client = {
-
-        fullName: document.getElementById("fullName").value.trim(),
-
-        phone: document.getElementById("phone").value.trim(),
-
-        email: document.getElementById("email").value.trim(),
-
-        membershipType: document.getElementById("membershipType").value,
-
-        emergencyContactName:
-            document.getElementById("emergencyContactName").value.trim(),
-
-        emergencyContactPhone:
-            document.getElementById("emergencyContactPhone").value.trim(),
-
-        medicalNotes:
-            document.getElementById("medicalNotes").value.trim()
-
-    };
-
-    try {
-
-        const saveButton = document.getElementById("saveNewClient");
-
-        disableButton(saveButton, "Guardando...");
-
-        const response = await fetch("/clients", {
-
-            method: "POST",
-
-            headers: {
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(client)
-
-        });
-
-        if (!response.ok) {
-
-            throw new Error("No fue posible registrar el cliente.");
-
-        }
-
-        const result = await response.json();
-
-        console.log(result);
-
-        closeModal();
-
-        await loadClients();
-
-        const clientResponse = await fetch(`/clients/${result.clientId}`);
-
-        const client = await clientResponse.json();
-
-        loadClient(client);
-
-        alert("Cliente registrado correctamente");
-
-    }
     catch (error) {
 
         console.error(error);
 
-        alert("Ocurrió un error al registrar el cliente.");
+    }
+
+};
+
+async function initializeNewClientForm() {
+
+    await loadMembershipTypes();
+
+    if (editingClient) {
+
+        populateClientForm(editingClient);
 
     }
-    finally {
 
-        const saveButton = document.getElementById("saveNewClient");
+    document
 
-        enableButton(saveButton);
+        .getElementById("newClientForm")
+
+        .addEventListener(
+
+            "submit",
+
+            saveClient
+
+        );
+
+    document
+
+        .getElementById("cancelNewClient")
+
+        .addEventListener(
+
+            "click",
+
+            () => {
+
+                editingClient = null;
+
+                closeModal();
+
+            }
+
+        );
+
+}
+
+async function loadMembershipTypes() {
+
+    const membershipSelect =
+
+        document.getElementById(
+
+            "membershipType"
+
+        );
+
+    membershipSelect.innerHTML =
+
+        `<option value="">Seleccionar...</option>`;
+
+    try {
+
+        const memberships =
+
+            await MembershipService.getAll();
+
+        memberships.forEach(membership => {
+
+            const option =
+
+                document.createElement("option");
+
+            option.value =
+
+                membership.membershipId;
+
+            option.textContent =
+
+                membership.name;
+
+            membershipSelect.appendChild(option);
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+function populateClientForm(client) {
+
+    document.getElementById(
+
+        "clientFormTitle"
+
+    ).textContent =
+
+        "👤 Editar Cliente";
+
+    document.getElementById(
+
+        "clientFormDescription"
+
+    ).textContent =
+
+        "Actualiza la información del cliente.";
+
+    document.getElementById(
+
+        "saveNewClient"
+
+    ).textContent =
+
+        "Actualizar";
+
+    document.getElementById(
+
+        "clientId"
+
+    ).value =
+
+        client.clientId || "";
+
+    document.getElementById(
+
+        "fullName"
+
+    ).value =
+
+        client.fullName || "";
+
+    document.getElementById(
+
+        "phone"
+
+    ).value =
+
+        client.phone || "";
+
+    document.getElementById(
+
+        "email"
+
+    ).value =
+
+        client.email || "";
+
+    document.getElementById(
+
+        "membershipType"
+
+    ).value =
+
+        client.membershipId || "";
+
+    document.getElementById(
+
+        "emergencyContactName"
+
+    ).value =
+
+        client.emergencyContactName || "";
+
+    document.getElementById(
+
+        "emergencyContactPhone"
+
+    ).value =
+
+        client.emergencyContactPhone || "";
+
+    document.getElementById(
+
+        "medicalNotes"
+
+    ).value =
+
+        client.medicalNotes || "";
+
+}
+
+function getClientFormData() {
+
+    return {
+
+        fullName:
+
+            document.getElementById("fullName")
+
+                .value
+
+                .trim(),
+
+        phone:
+
+            document.getElementById("phone")
+
+                .value
+
+                .trim(),
+
+        email:
+
+            document.getElementById("email")
+
+                .value
+
+                .trim(),
+
+        membershipId:
+
+            document.getElementById("membershipType")
+
+                .value,
+
+        emergencyContactName:
+
+            document.getElementById("emergencyContactName")
+
+                .value
+
+                .trim(),
+
+        emergencyContactPhone:
+
+            document.getElementById("emergencyContactPhone")
+
+                .value
+
+                .trim(),
+
+        medicalNotes:
+
+            document.getElementById("medicalNotes")
+
+                .value
+
+                .trim()
+
+    };
+
+}
+
+async function saveClient(event) {
+
+    event.preventDefault();
+
+    const client = getClientFormData();
+
+    if (!client.fullName) {
+
+        alert("Ingresa el nombre del cliente.");
+
+        return;
+
+    }
+
+    if (!client.phone) {
+
+        alert("Ingresa el teléfono.");
+
+        return;
+
+    }
+
+    if (!client.membershipId) {
+
+        alert("Selecciona una membresía.");
+
+        return;
+
+    }
+
+    try {
+
+        if (editingClient) {
+
+            await ClientService.update(
+
+                editingClient.clientId,
+
+                client
+
+            );
+
+            alert(
+
+                "Cliente actualizado correctamente."
+
+            );
+
+        }
+
+        else {
+
+            await ClientService.create(
+
+                client
+
+            );
+
+            alert(
+
+                "Cliente registrado correctamente."
+
+            );
+
+        }
+
+        editingClient = null;
+
+        closeModal();
+
+        await ModuleFactory.refresh(
+
+            "clients"
+
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
 
     }
 

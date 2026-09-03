@@ -1,0 +1,228 @@
+/* ====================================================
+   ATTENDANCE
+==================================================== */
+
+.attendance-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(220px, 320px) 1fr;
+
+    gap: 24px;
+
+    margin-bottom: 32px;
+
+}
+
+
+/* ====================================================
+   SIDEBAR
+==================================================== */
+
+.attendance-sidebar {
+
+    min-width: 0;
+
+}
+
+
+.search-box {
+
+    margin-bottom: 16px;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+}
+
+
+/* ====================================================
+   CLIENTES
+==================================================== */
+
+.attendance-results {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.attendance-card {
+
+    padding: 14px;
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        var(--fm-radius-sm);
+
+    background:
+        var(--fm-surface);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.attendance-card:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* ====================================================
+   DETALLE
+==================================================== */
+
+.attendance-content {
+
+    min-width: 0;
+
+}
+
+
+.attendance-actions {
+
+    margin-top: 24px;
+
+}
+
+
+/* ====================================================
+   HISTORIAL
+==================================================== */
+
+.attendance-history-section {
+
+    margin-top: 24px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid var(--fm-border);
+
+}
+
+
+.attendance-history-title {
+
+    margin-bottom: 16px;
+
+}
+
+
+.attendance-history-title h2 {
+
+    margin: 0 0 4px 0;
+
+}
+
+
+.attendance-history-title p {
+
+    margin: 0;
+
+}
+
+
+.attendance-history {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.attendance-history-table {
+
+    min-width: 650px;
+
+    border:
+        1px solid var(--fm-border);
+
+    border-radius:
+        var(--fm-radius-md);
+
+    overflow: hidden;
+
+    background:
+        var(--fm-surface);
+
+}
+
+
+.attendance-history-header,
+
+.attendance-history-row {
+
+    display: grid;
+
+    grid-template-columns:
+
+        140px 1fr 150px 150px;
+
+    gap: 16px;
+
+    align-items: center;
+
+    padding: 14px 18px;
+
+}
+
+
+.attendance-history-header {
+
+    font-weight: 700;
+
+    border-bottom:
+        1px solid var(--fm-border);
+
+}
+
+
+.attendance-history-row {
+
+    border-bottom:
+        1px solid var(--fm-border);
+
+}
+
+
+.attendance-history-row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+/* ====================================================
+   RESPONSIVE
+==================================================== */
+
+@media (max-width: 700px) {
+
+    .attendance-layout {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}

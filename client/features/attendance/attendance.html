@@ -1,0 +1,104 @@
+<div class="feature-header">
+
+    <div>
+
+        <h2>
+            ✅ Registrar asistencia
+        </h2>
+
+        <p>
+            Registra la asistencia de las clientas de tus clases.
+        </p>
+
+    </div>
+
+
+    <!-- =========================================
+         ESCANEAR QR
+    ========================================== -->
+
+    <button type="button" id="attendanceScannerButton" class="fm-btn fm-btn-primary">
+
+        📷 Escanear QR
+
+    </button>
+
+</div>
+
+
+<div class="attendance-layout">
+
+
+    <!-- =========================================
+         CLIENTAS
+    ========================================== -->
+
+    <aside class="attendance-sidebar">
+
+        <div class="search-box">
+
+            <input type="text" id="attendanceSearch" placeholder="Buscar clienta...">
+
+        </div>
+
+
+        <div id="attendanceResults" class="attendance-results">
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         CLIENTA SELECCIONADA
+    ========================================== -->
+
+    <section id="attendanceDetails" class="attendance-content">
+
+        <div class="empty-state">
+
+            <h2>
+                Selecciona una clienta
+            </h2>
+
+            <p>
+                Aquí aparecerá su información y la clase actual.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<!-- =============================================
+     HISTORIAL
+============================================= -->
+
+<section class="attendance-history-section">
+
+    <div class="attendance-history-title">
+
+        <h2>
+            Historial de asistencias
+        </h2>
+
+        <p>
+            Últimas asistencias registradas.
+        </p>
+
+    </div>
+
+
+    <div id="attendanceHistory" class="attendance-history">
+
+        <div class="empty-state">
+
+            Cargando historial...
+
+        </div>
+
+    </div>
+
+</section>

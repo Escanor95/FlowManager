@@ -1,0 +1,231 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+
+    background:
+        var(--color-black);
+
+    color:
+        var(--color-white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font:
+        inherit;
+}
+
+
+button {
+    border: none;
+
+    cursor: pointer;
+}
+
+
+input {
+    border: none;
+
+    outline: none;
+}
+
+
+/* ==========================================
+   APP ROOT
+========================================== */
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    background:
+        linear-gradient(180deg,
+            #0D0D0F 0%,
+            #111114 100%);
+
+    position: relative;
+}
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        24px 24px calc(100px + env(safe-area-inset-bottom));
+
+    position: relative;
+}
+
+
+/* ==========================================
+   LOGIN PAGE
+========================================== */
+
+.login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+
+/* ==========================================
+   INPUT RESET
+========================================== */
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    background:
+        transparent !important;
+
+    color:
+        var(--color-white);
+
+    width: 100%;
+
+    height: 100%;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   CHECKBOX
+========================================== */
+
+input[type="checkbox"] {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    border-radius: 5px;
+
+    border:
+        1px solid var(--color-gray-dark);
+
+    background:
+        transparent;
+
+    position: relative;
+}
+
+
+input[type="checkbox"]:checked {
+    background:
+        var(--color-gold);
+
+    border-color:
+        var(--color-gold);
+}
+
+
+input[type="checkbox"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 8px;
+
+    border:
+        solid var(--color-black);
+
+    border-width:
+        0 2px 2px 0;
+
+    transform:
+        rotate(45deg);
+
+    left: 5px;
+    top: 2px;
+}
+
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+
+/* ==========================================
+   SAFE AREA
+========================================== */
+
+@supports (padding: max(0px)) {
+
+    .page {
+        padding-top:
+            max(24px,
+                env(safe-area-inset-top));
+    }
+
+}

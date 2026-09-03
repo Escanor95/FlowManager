@@ -1,0 +1,158 @@
+.schedule-calendar {
+    width: 100%;
+}
+
+#scheduleCalendarNavigation {
+    margin-bottom: 18px;
+}
+
+#scheduleBoard {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: var(--fm-radius-md);
+}
+
+.fm-board {
+    display: grid;
+    grid-template-columns: 64px repeat(7, minmax(110px, 1fr));
+    min-width: 850px;
+    width: 100%;
+    background: var(--fm-surface);
+    border: 1px solid var(--fm-border);
+    border-radius: var(--fm-radius-md);
+    overflow: hidden;
+    box-shadow: var(--fm-shadow-sm);
+}
+
+.fm-board-header {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-right: 1px solid var(--fm-border);
+    border-bottom: 1px solid var(--fm-border);
+    color: var(--fm-text);
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--fm-surface);
+}
+
+.fm-board-hour {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--fm-border);
+    border-bottom: 1px solid var(--fm-border);
+    color: var(--fm-text-light);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.fm-board-cell {
+    min-height: 58px;
+    padding: 6px;
+    border-right: 1px solid var(--fm-border);
+    border-bottom: 1px solid var(--fm-border);
+    background: var(--fm-surface);
+}
+
+.fm-board-header:last-child,
+.fm-board-cell:nth-child(8n),
+.fm-board-cell:nth-child(8n) {
+    border-right: none;
+}
+
+@media (max-width: 900px) {
+
+    .fm-board {
+        min-width: 760px;
+        grid-template-columns: 54px repeat(7, minmax(100px, 1fr));
+    }
+
+    .fm-board-header {
+        min-height: 46px;
+        font-size: 12px;
+    }
+
+    .fm-board-hour {
+        min-height: 52px;
+        font-size: 11px;
+    }
+
+    .fm-board-cell {
+        min-height: 52px;
+        padding: 4px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #scheduleCalendarNavigation .fm-calendar {
+        padding: 10px;
+    }
+
+    .fm-calendar-toolbar {
+        margin-bottom: 0;
+    }
+
+    .fm-calendar-title {
+        font-size: 13px;
+    }
+
+    .fm-calendar-button {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+}
+
+.schedule-weekdays {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 6px 12px;
+    margin-top: 6px;
+}
+
+.schedule-weekdays label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.schedule-weekdays input {
+    margin: 0;
+}
+
+.schedule-weekdays {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 6px 14px;
+    margin-top: 6px;
+}
+
+.schedule-weekdays label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.schedule-weekdays input {
+    margin: 0;
+}
+
+.repeat-options {
+    margin-top: 4px;
+}
+
+.repeat-options .fm-group {
+    margin-bottom: 10px;
+}
