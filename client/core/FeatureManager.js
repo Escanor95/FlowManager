@@ -1,9 +1,15 @@
 /*
 ====================================================
 
-    FLOWMANAGER
+    FLOWMANAGER CORE
 
-    FEATURE MANAGER v2.0
+    FeatureManager v1.0
+
+    Responsabilidad:
+
+    - Cargar HTML
+    - Cargar CSS
+    - Evitar CSS duplicados
 
 ====================================================
 */
@@ -14,50 +20,31 @@ class FeatureManager {
 
     static async load(featurePath) {
 
-        const htmlPath = `features/${featurePath}.html`;
-        const cssPath = `features/${featurePath}.css`;
+        try {
 
-        await this.loadCSS(cssPath);
+            const basePath = `features/${featurePath}`;
 
-        const response = await fetch(htmlPath);
+            await this.loadCSS(`${basePath}.css`);
 
-        if (!response.ok) {
+            const response = await fetch(`${basePath}.html`);
 
-            throw new Error(
+            if (!response.ok) {
 
-                `No fue posible cargar ${htmlPath}`
+                throw new Error(`No se pudo cargar ${basePath}.html`);
 
-            );
+            }
 
-        }
-
-        return await response.text();
-
-    }
-
-    static async render(featurePath) {
-
-        const workspace = document.getElementById(
-
-            "workspace"
-
-        );
-
-        if (!workspace) {
-
-            throw new Error(
-
-                "Workspace no encontrado."
-
-            );
+            return await response.text();
 
         }
 
-        workspace.innerHTML = await this.load(
+        catch (error) {
 
-            featurePath
+            console.error(error);
 
-        );
+            return "<h2>Error cargando Feature</h2>";
+
+        }
 
     }
 
@@ -69,13 +56,9 @@ class FeatureManager {
 
         }
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
 
-            const link = document.createElement(
-
-                "link"
-
-            );
+            const link = document.createElement("link");
 
             link.rel = "stylesheet";
 
@@ -89,35 +72,9 @@ class FeatureManager {
 
             };
 
-            link.onerror = () => {
-
-                reject(
-
-                    new Error(
-
-                        `No fue posible cargar ${cssPath}`
-
-                    )
-
-                );
-
-            };
-
             document.head.appendChild(link);
 
         });
-
-    }
-
-    static async openModal(featurePath) {
-
-        const html = await this.load(
-
-            featurePath
-
-        );
-
-        openModal(html);
 
     }
 

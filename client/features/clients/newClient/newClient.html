@@ -1,12 +1,8 @@
 <div class="feature-header">
 
-    <h2 id="clientFormTitle">
+    <h2>👤 Registrar Cliente</h2>
 
-        👤 Registrar Cliente
-
-    </h2>
-
-    <p id="clientFormDescription">
+    <p>
 
         Completa la información para registrar un nuevo cliente.
 
@@ -16,7 +12,7 @@
 
 <form id="newClientForm" class="fm-form">
 
-    <input type="hidden" id="clientId">
+    <!-- Información Básica -->
 
     <section class="fm-section">
 
@@ -36,7 +32,7 @@
 
                 </label>
 
-                <input type="text" id="fullName" required autocomplete="name">
+                <input type="text" id="fullName" required>
 
             </div>
 
@@ -48,7 +44,7 @@
 
                 </label>
 
-                <input type="text" id="phone" required autocomplete="tel">
+                <input type="text" id="phone" required>
 
             </div>
 
@@ -56,11 +52,11 @@
 
                 <label for="email">
 
-                    Correo
+                    Correo Electrónico
 
                 </label>
 
-                <input type="email" id="email" autocomplete="email">
+                <input type="email" id="email">
 
             </div>
 
@@ -68,7 +64,7 @@
 
                 <label for="membershipType">
 
-                    Membresía
+                    Tipo de Membresía
 
                 </label>
 
@@ -87,6 +83,8 @@
         </div>
 
     </section>
+
+    <!-- Información Adicional -->
 
     <section class="fm-section">
 
@@ -130,7 +128,7 @@
 
                 </label>
 
-                <textarea id="medicalNotes" rows="4"></textarea>
+                <textarea id="medicalNotes"></textarea>
 
             </div>
 
@@ -155,3 +153,5 @@
     </div>
 
 </form>
+
+</div>
