@@ -1,20 +1,4 @@
-/*
-====================================================
-
-    FLOWMANAGER CORE
-
-    FeatureManager v1.0
-
-    Responsabilidad:
-
-    - Cargar HTML
-    - Cargar CSS
-    - Evitar CSS duplicados
-
-====================================================
-*/
-
-class FeatureManager {
+﻿class FeatureManager {
 
     static loadedCSS = new Set();
 
@@ -26,11 +10,14 @@ class FeatureManager {
 
             await this.loadCSS(`${basePath}.css`);
 
-            const response = await fetch(`${basePath}.html`);
+            const response =
+                await fetch(`${basePath}.html`);
 
             if (!response.ok) {
 
-                throw new Error(`No se pudo cargar ${basePath}.html`);
+                throw new Error(
+                    `No se pudo cargar ${basePath}.html`
+                );
 
             }
 
@@ -48,6 +35,30 @@ class FeatureManager {
 
     }
 
+
+    static async render(featurePath) {
+
+        const workspace =
+            document.getElementById("workspace");
+
+        if (!workspace) {
+
+            throw new Error(
+                "Workspace no encontrado."
+            );
+
+        }
+
+        const html =
+            await this.load(featurePath);
+
+        workspace.innerHTML = html;
+
+        return html;
+
+    }
+
+
     static async loadCSS(cssPath) {
 
         if (this.loadedCSS.has(cssPath)) {
@@ -56,9 +67,10 @@ class FeatureManager {
 
         }
 
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
 
-            const link = document.createElement("link");
+            const link =
+                document.createElement("link");
 
             link.rel = "stylesheet";
 
@@ -69,6 +81,16 @@ class FeatureManager {
                 this.loadedCSS.add(cssPath);
 
                 resolve();
+
+            };
+
+            link.onerror = () => {
+
+                reject(
+                    new Error(
+                        `No se pudo cargar ${cssPath}`
+                    )
+                );
 
             };
 
