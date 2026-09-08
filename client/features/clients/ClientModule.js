@@ -53,6 +53,7 @@ class ClientModule extends Module {
     // REFRESH
     // ====================================================
 
+
     async refresh() {
 
         try {
@@ -61,25 +62,37 @@ class ClientModule extends Module {
 
             this.clearProfile();
 
-            const results =
+            const search =
                 document.getElementById(
-                    "results"
+                    "searchClient"
                 );
 
-            if (results) {
-
-                results.innerHTML = "";
-
-                results.style.display =
-                    "none";
-
+            if (search) {
+                search.value = "";
             }
+
+            const searchWrapper =
+                document.querySelector(
+                    ".client-search-wrapper"
+                );
+
+            if (searchWrapper) {
+                searchWrapper.style.display = "";
+            }
+
+            const clients =
+                await ClientService.getAll();
+
+            this.renderClientCards(
+                clients
+            );
 
         }
 
         catch (error) {
 
             console.error(
+                "Error cargando clientes:",
                 error
             );
 
@@ -438,6 +451,7 @@ class ClientModule extends Module {
     // SEARCH
     // ====================================================
 
+
     initializeSearch() {
 
         const search =
@@ -450,9 +464,7 @@ class ClientModule extends Module {
                 "results"
             );
 
-
         if (!search) return;
-
 
         search.oninput =
             async () => {
@@ -460,30 +472,14 @@ class ClientModule extends Module {
                 const text =
                     search.value.trim();
 
-
-                if (text === "") {
-
-                    if (results) {
-
-                        results.innerHTML = "";
-
-                        results.style.display =
-                            "none";
-
-                    }
-
-                    return;
-
-                }
-
-
                 try {
 
                     const clients =
-                        await ClientService.search(
-                            text
-                        );
-
+                        text === ""
+                            ? await ClientService.getAll()
+                            : await ClientService.search(
+                                text
+                            );
 
                     this.renderClientCards(
                         clients
@@ -494,45 +490,13 @@ class ClientModule extends Module {
                 catch (error) {
 
                     console.error(
+                        "Error buscando clientes:",
                         error
                     );
 
                 }
 
             };
-
-
-        document.addEventListener(
-            "click",
-            event => {
-
-                const searchWrapper =
-                    document.querySelector(
-                        ".client-search-wrapper"
-                    );
-
-                if (
-                    !searchWrapper ||
-                    searchWrapper.contains(
-                        event.target
-                    )
-                ) {
-
-                    return;
-
-                }
-
-
-                if (results) {
-
-                    results.style.display =
-                        "none";
-
-                }
-
-            }
-
-        );
 
     }
 
@@ -664,6 +628,7 @@ class ClientModule extends Module {
     // SELECT CLIENT
     // ====================================================
 
+
     async selectClient(
         clientId
     ) {
@@ -675,16 +640,13 @@ class ClientModule extends Module {
                     clientId
                 );
 
-
             this.selectedClient =
                 client;
-
 
             const results =
                 document.getElementById(
                     "results"
                 );
-
 
             if (results) {
 
@@ -695,12 +657,10 @@ class ClientModule extends Module {
 
             }
 
-
             const search =
                 document.getElementById(
                     "searchClient"
                 );
-
 
             if (search) {
 
@@ -708,6 +668,17 @@ class ClientModule extends Module {
 
             }
 
+            const searchWrapper =
+                document.querySelector(
+                    ".client-search-wrapper"
+                );
+
+            if (searchWrapper) {
+
+                searchWrapper.style.display =
+                    "none";
+
+            }
 
             this.renderClientProfile(
                 client
@@ -751,6 +722,25 @@ class ClientModule extends Module {
         profile.innerHTML = `
 
             <div class="client-profile-page">
+
+                <button
+                    class="fm-btn"
+                    id="backToClients"
+                    type="button"
+                    style="margin-bottom: 20px;"
+                >
+
+                    <span
+                        class="material-symbols-outlined"
+                    >
+
+                        arrow_back
+
+                    </span>
+
+                    Volver a clientes
+
+                </button>
 
                 <div class="client-profile-header">
 
@@ -1011,6 +1001,8 @@ class ClientModule extends Module {
 
         this.initializeProfileButtons();
 
+        this.initializeBackButton();
+
         this.loadReservationHistory(
             client.clientId
         );
@@ -1021,6 +1013,46 @@ class ClientModule extends Module {
     // ====================================================
     // PROFILE BUTTONS
     // ====================================================
+
+    initializeBackButton() {
+
+        const backButton =
+            document.getElementById(
+                "backToClients"
+            );
+
+        if (!backButton) return;
+
+        backButton.onclick =
+            async () => {
+
+                this.selectedClient = null;
+
+                this.clearProfile();
+
+                const search =
+                    document.getElementById(
+                        "searchClient"
+                    );
+
+                if (search) {
+                    search.value = "";
+                }
+
+                const searchWrapper =
+                    document.querySelector(
+                        ".client-search-wrapper"
+                    );
+
+                if (searchWrapper) {
+                    searchWrapper.style.display = "";
+                }
+
+                await this.refresh();
+
+            };
+
+    }
 
     initializeProfileButtons() {
 
