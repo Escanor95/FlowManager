@@ -464,6 +464,112 @@ async function initializeDatabase() {
 
 
         // =================================================
+        // CLIENT MEMBERSHIPS / PURCHASED PACKAGES
+        // =================================================
+        // The application uses this table for package history, renewal,
+        // activation, freezing and extension history.  Older databases
+        // may have the first-generation schema, so missing columns are
+        // added below instead of replacing existing data.
+
+        await run(`
+            CREATE TABLE IF NOT EXISTS client_memberships (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                clientMembershipId TEXT NOT NULL UNIQUE,
+                clientId TEXT NOT NULL,
+                membershipId TEXT NOT NULL,
+                membershipName TEXT,
+                price REAL,
+                classes INTEGER,
+                remainingClasses INTEGER,
+                durationDays INTEGER,
+                status TEXT NOT NULL DEFAULT 'PENDING',
+                startDate TEXT,
+                endDate TEXT,
+                purchasedAt TEXT,
+                activatedAt TEXT,
+                expiresAt TEXT,
+                frozenAt TEXT,
+                frozenRemainingDays INTEGER,
+                createdByUserId TEXT,
+                createdAt TEXT NOT NULL,
+                updatedAt TEXT NOT NULL,
+                FOREIGN KEY(clientId) REFERENCES clients(clientId),
+                FOREIGN KEY(membershipId) REFERENCES memberships(membershipId),
+                FOREIGN KEY(createdByUserId) REFERENCES users(userId)
+            )
+        `);
+
+        await addColumnIfMissing('client_memberships', 'membershipName', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'price', 'REAL');
+        await addColumnIfMissing('client_memberships', 'classes', 'INTEGER');
+        await addColumnIfMissing('client_memberships', 'remainingClasses', 'INTEGER');
+        await addColumnIfMissing('client_memberships', 'durationDays', 'INTEGER');
+        await addColumnIfMissing('client_memberships', 'status', "TEXT DEFAULT 'PENDING'");
+        await addColumnIfMissing('client_memberships', 'startDate', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'endDate', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'purchasedAt', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'activatedAt', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'expiresAt', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'frozenAt', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'frozenRemainingDays', 'INTEGER');
+        await addColumnIfMissing('client_memberships', 'createdByUserId', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'createdAt', 'TEXT');
+        await addColumnIfMissing('client_memberships', 'updatedAt', 'TEXT');
+
+        // Backfill package snapshot fields for databases created with the
+        // older membership schema.
+        await run(`
+            UPDATE client_memberships
+            SET
+                membershipName = COALESCE(membershipName, (SELECT name FROM memberships m WHERE m.membershipId = client_memberships.membershipId)),
+                price = COALESCE(price, (SELECT price FROM memberships m WHERE m.membershipId = client_memberships.membershipId)),
+                classes = COALESCE(classes, (SELECT classes FROM memberships m WHERE m.membershipId = client_memberships.membershipId)),
+                durationDays = COALESCE(durationDays, (SELECT durationDays FROM memberships m WHERE m.membershipId = client_memberships.membershipId)),
+                remainingClasses = COALESCE(remainingClasses, classes),
+                createdAt = COALESCE(createdAt, purchasedAt, datetime('now')),
+                updatedAt = COALESCE(updatedAt, createdAt, purchasedAt, datetime('now'))
+            WHERE membershipId IS NOT NULL
+        `);
+
+        await run(`CREATE INDEX IF NOT EXISTS idx_client_memberships_client_status ON client_memberships(clientId, status)`);
+        await run(`CREATE INDEX IF NOT EXISTS idx_client_memberships_client_purchased ON client_memberships(clientId, COALESCE(purchasedAt, createdAt))`);
+
+        await run(`
+            CREATE TABLE IF NOT EXISTS membership_extensions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                extensionId TEXT NOT NULL UNIQUE,
+                clientMembershipId TEXT NOT NULL,
+                daysAdded INTEGER NOT NULL,
+                reason TEXT NOT NULL,
+                extendedByUserId TEXT,
+                createdAt TEXT NOT NULL,
+                FOREIGN KEY(clientMembershipId) REFERENCES client_memberships(clientMembershipId),
+                FOREIGN KEY(extendedByUserId) REFERENCES users(userId)
+            )
+        `);
+
+        await run(`
+            CREATE TABLE IF NOT EXISTS membership_freezes (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                freezeId TEXT NOT NULL UNIQUE,
+                clientMembershipId TEXT NOT NULL,
+                frozenAt TEXT NOT NULL,
+                reactivatedAt TEXT,
+                remainingDays INTEGER,
+                frozenByUserId TEXT,
+                reactivatedByUserId TEXT,
+                createdAt TEXT NOT NULL,
+                updatedAt TEXT NOT NULL,
+                FOREIGN KEY(clientMembershipId) REFERENCES client_memberships(clientMembershipId),
+                FOREIGN KEY(frozenByUserId) REFERENCES users(userId),
+                FOREIGN KEY(reactivatedByUserId) REFERENCES users(userId)
+            )
+        `);
+
+        await run(`CREATE INDEX IF NOT EXISTS idx_membership_extensions_client_membership ON membership_extensions(clientMembershipId)`);
+        await run(`CREATE INDEX IF NOT EXISTS idx_membership_freezes_client_membership ON membership_freezes(clientMembershipId)`);
+
+        // =================================================
         // ACTIVITIES
         // =================================================
 

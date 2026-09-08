@@ -12,6 +12,7 @@ const AppState = {
     assignedSchedules: [],
     reservations: [],
     attendances: [],
+    services: [],
     managerDashboard: null,
     selectedDate: localDateKey(),
     selectedMembershipId: null,
@@ -228,18 +229,61 @@ async function loadCoachAvailabilityForDate(dateKey = AppState.selectedDate) {
     AppState.schedules = results.sort((a,b) => String(a.startTime).localeCompare(String(b.startTime)));
 }
 
+const PWA_BOOKABLE_SERVICE_NAMES = new Set([
+    "pilates", "sculpt", "gap", "barre", "spinning",
+    "zumba strong", "step", "jumping"
+]);
+const WHATSAPP_SERVICE_NAMES = new Set([
+    "masajes", "faciales", "uñas", "pestañas", "nutrióloga", "nutriologa"
+]);
+const AURA_WHATSAPP = "525530790958";
+
+function normalizeServiceName(value) {
+    return String(value || "").trim().toLowerCase();
+}
+function isWhatsAppService(activity) {
+    const name = normalizeServiceName(activity?.name);
+    return WHATSAPP_SERVICE_NAMES.has(name);
+}
+function isPwaBookableService(activity) {
+    const name = normalizeServiceName(activity?.name);
+    return PWA_BOOKABLE_SERVICE_NAMES.has(name);
+}
+function whatsappServiceUrl(activity) {
+    const name = String(activity?.name || "servicio").trim();
+    const message = `Hola Aura Wellness Studio, quiero agendar ${name}.`;
+    return `https://wa.me/${AURA_WHATSAPP}?text=${encodeURIComponent(message)}`;
+}
+function renderWhatsAppServices() {
+    const services = AppState.services.filter(isWhatsAppService);
+    if (!services.length) return "";
+    return `<section class="pwa-services-section"><div class="section-title-row"><div><h2>Servicios</h2><p>Agenda estos servicios directamente por WhatsApp.</p></div></div><div class="service-list">${services.map(service => `<article class="service-card"><div class="activity-icon"><i class="${esc(service.icon || "fa-regular fa-calendar")}"></i></div><div class="service-info"><h3>${esc(service.name)}</h3>${service.description ? `<p>${esc(service.description)}</p>` : ""}</div><a class="primary-mini service-whatsapp" href="${whatsappServiceUrl(service)}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></article>`).join("")}</div></section>`;
+}
+
+async function loadClientServices() {
+    try {
+        const activities = await apiGet("/activities");
+        AppState.services = Array.isArray(activities) ? activities.filter(activity => isPwaBookableService(activity) || isWhatsAppService(activity)) : [];
+    } catch (error) {
+        console.warn("No fue posible cargar los servicios:", error);
+        AppState.services = [];
+    }
+}
+
 async function refreshClientData() {
     const clientId = AppState.user?.clientId;
     if (!clientId) return;
     try {
-        const [client, reservations, attendances] = await Promise.all([
+        const [client, reservations, attendances, activities] = await Promise.all([
             apiGet(`/clients/${encodeURIComponent(clientId)}`),
             apiGet(`/reservations/client/${encodeURIComponent(clientId)}`),
-            apiGet(`/attendance/client/${encodeURIComponent(clientId)}`)
+            apiGet(`/attendance/client/${encodeURIComponent(clientId)}`),
+            apiGet("/activities")
         ]);
         AppState.client = client;
         AppState.reservations = Array.isArray(reservations) ? reservations : [];
         AppState.attendances = Array.isArray(attendances) ? attendances : [];
+        AppState.services = Array.isArray(activities) ? activities.filter(activity => isPwaBookableService(activity) || isWhatsAppService(activity)) : [];
         AppState.user = { ...AppState.user, ...client, fullName: client.fullName || AppState.user.fullName, email: client.userEmail || client.email || AppState.user.email };
         persistUser();
         if (AppState.currentPage !== "login") renderApp();
@@ -518,7 +562,7 @@ async function renderReservePageAsync() {
 }
 function renderReservePage() {
     if (isCoachUser()) return renderCoachReservePage();
-    return `<div class="page"><div class="content">${renderHeader("Reserva de Clase")}<section class="hero compact"><span class="eyebrow">AGENDA</span><h1>Reserva tu clase</h1><p>Elige una fecha y consulta los lugares reales.</p></section><div class="card date-card"><label>Fecha<input type="date" value="${AppState.selectedDate}" onchange="selectDate(this.value)"></label></div><div class="section-title-row"><div><h2>Clases disponibles</h2><p>${formatDate(AppState.selectedDate,{weekday:"long",day:"numeric",month:"long"})}</p></div><button class="icon-button light" onclick="renderReservePageAsync()"><i class="fa-solid fa-rotate"></i></button></div><div id="reserveList" class="stack-list"><div class="card loading-card">Consultando horarios...</div></div></div></div>`;
+    return `<div class="page"><div class="content">${renderHeader("Reserva de Clase")}<section class="hero compact"><span class="eyebrow">AGENDA</span><h1>Reserva tu clase</h1><p>Elige una fecha y consulta los lugares reales.</p></section><div class="card date-card"><label>Fecha<input type="date" value="${AppState.selectedDate}" onchange="selectDate(this.value)"></label></div><div class="section-title-row"><div><h2>Clases disponibles</h2><p>${formatDate(AppState.selectedDate,{weekday:"long",day:"numeric",month:"long"})}</p></div><button class="icon-button light" onclick="renderReservePageAsync()"><i class="fa-solid fa-rotate"></i></button></div><div id="reserveList" class="stack-list"><div class="card loading-card">Consultando horarios...</div></div>${renderWhatsAppServices()}</div></div>`;
 }
 async function reserveClass(scheduleId, reservationDate) {
     const clientId = AppState.user?.clientId;
